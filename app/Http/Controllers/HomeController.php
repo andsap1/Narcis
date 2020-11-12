@@ -18,6 +18,6 @@ class HomeController extends Controller
            $items = Preke::all();
            $categories=Kategorija::all();
 
-        return view('app', compact('items','categories'));
+        return view('shop', compact('items','categories'));
         }
 }
