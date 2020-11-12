@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="619088c9-1272-49fb-92fe-0d231e797d86" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-    </list>
+    <list default="true" id="619088c9-1272-49fb-92fe-0d231e797d86" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +178,7 @@
       <workItem from="1605194860113" duration="273000" />
       <workItem from="1605195412984" duration="291000" />
       <workItem from="1605196083166" duration="12000" />
-      <workItem from="1605196153385" duration="490000" />
+      <workItem from="1605196153385" duration="547000" />
     </task>
     <servers />
   </component>
