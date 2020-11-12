@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Preke;
+
+use App\Models\Preke;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
