@@ -3,7 +3,7 @@
 
     <div class="main-content">
 
-    <h3 class="lg-3">Filtravimas</h3>
+
 {{--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">--}}
 {{--    <ol class="carousel-indicators">--}}
 {{--        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>--}}
@@ -137,4 +137,21 @@
 
 </div>
 </div>
+    @endsection
+@section('filter')
+    <h3 class="lg-3">Filtravimas</h3>
+    @endsection
+
+@section('category')
+    <div class="list-group">
+        <h4 class="list-group-item">Paieška</h4>
+        <h4 class="list-group-item">Kategorijos</h4>
+        @foreach($categories as $category)
+            <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+
+    @endforeach
+        <h4 class="list-group-item">Spalvos</h4>
+    @endsection
+        @section('sort')
+        <h4 class="lg-4">Rikiavimas</h4>
     @endsection

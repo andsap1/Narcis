@@ -64,15 +64,15 @@
     <div class="row">
 
         <div class="col-lg-3">
+            @yield('filter') {{--   <h3 class="lg-3">Filtravimas</h3>--}}
 
 
-
-            {{--   <div class="list-group">
-
-                   @foreach($categories as $category)
-                   <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
-   {{--
-   {{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
+            @yield('category'){{--   <div class="list-group">
+                   <h4 class="list-group-item">Kategorijos</h4>
+                     @foreach($categories as $category)
+                     <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+     {{--
+     {{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
 
 
 {{--                    </div>--}}
@@ -83,7 +83,7 @@
 <!-- /.col-lg-3 -->
 
 <div class="col-lg-9">
-
+@yield('sort')
 @yield('content')
 
 
