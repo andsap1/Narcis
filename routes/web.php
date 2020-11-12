@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/welcome', 'HomeController@index');
-Route::get('/', 'HomeController@index');
+
+Route::get('/', 'ShopController@index');
+Route::get('/item/{id}', 'ShopController@openItem');
 

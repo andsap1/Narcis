@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
 </head>
 
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
 {{--        <a class="navbar-brand" href="#">Start Bootstrap</a>--}}
-        <img style="width: 230px; height: 90px" src="images/final1.png"  class="rounded float-left" alt="...">
+        <img style="width: 230px; height: 90px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +56,7 @@
 
         <div class="col-lg-3">
 
-            <h1 class="lg-4">Kategorijos</h1>
+{{--            <h1 class="lg-4">Kategorijos</h1>--}}
 
             <div class="list-group">
                 @foreach($categories as $category)
@@ -75,7 +75,7 @@
         <div class="col-lg-9">
 
 @yield('content')
-            <!-- /.row -->
+
 
         </div>
         <!-- /.col-lg-9 -->

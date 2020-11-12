@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-<div>
+<div class="main-content">
 
 {{--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">--}}
 {{--    <ol class="carousel-indicators">--}}
@@ -31,24 +31,19 @@
 
 <div class="row">
     @foreach($items as $item)
-        {{--                    <div>--}}
-        {{--                        <h4 class="title">{{$item->pavadinimas}}</h4>--}}
-        {{--                        <div class="text"> <p>{{$item->aprasymas}}</p></div>--}}
-
-        {{--                    </div>--}}
-
-
-        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="images/rose.jpeg" alt=""></a>
+                <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
+               <img class="card-img-top" src="images/rose.jpeg" alt="">
                 {{--                        <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="#">{{$item->pavadinimas}}</a>
+                        <a href="{{ action('ShopController@openItem', $item->id_Preke)}}">{{$item->pavadinimas}}</a>
                     </h4>
                     <h5>{{$item->kaina}} Eur</h5>
                     <p class="card-text">{{$item->aprasymas}}</p>
                 </div>
+                </a>
                 {{--                        <div class="card-footer">--}}
                 {{--                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>--}}
                 {{--                        </div>--}}
