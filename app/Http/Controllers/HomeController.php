@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Kategorija;
 use App\Models\Preke;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -15,6 +16,8 @@ class HomeController extends Controller
 {
     public function index(){
            $items = Preke::all();
-        return view('welcome', compact('items'));
+           $categories=Kategorija::all();
+
+        return view('app', compact('items','categories'));
         }
 }
