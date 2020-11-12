@@ -61,11 +61,11 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <h1 class="lg-4">Filtravimas</h1>
+
 
 
             <div class="list-group">
-                <h4 class="list-group-item">Kategorijos</h4>
+
                 @foreach($categories as $category)
                 <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
 {{--
@@ -80,7 +80,7 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-            <h4 class="lg-4">Rikiavimas</h4>
+
 @yield('content')
 
 

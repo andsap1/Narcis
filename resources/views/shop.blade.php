@@ -1,7 +1,9 @@
 @extends('app')
 @section('content')
-<div class="main-content">
 
+    <div class="main-content">
+
+    <h3 class="lg-3">Filtravimas</h3>
 {{--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">--}}
 {{--    <ol class="carousel-indicators">--}}
 {{--        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>--}}
@@ -30,6 +32,8 @@
 {{--</div>--}}
 
 <div class="row">
+
+
     @foreach($items as $item)
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
@@ -129,6 +133,7 @@
             </div>
         </div>
     </div>
+
 
 </div>
 </div>
