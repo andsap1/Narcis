@@ -38,4 +38,7 @@ class ShopController extends Controller
         return view('item', compact('item','categories', 'categoryname','mainphoto'));
 
     }
+    public function reviews(){
+        return view('review');
+    }
 }

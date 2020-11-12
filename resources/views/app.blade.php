@@ -45,6 +45,9 @@
                     <a class="nav-link" href="#">Kontaktai</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{action('ShopController@reviews')}}">Atsiliepimai</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Prisijungti</a>
                 </li>
                 <li class="nav-item">
@@ -64,41 +67,41 @@
 
 
 
-            <div class="list-group">
+            {{--   <div class="list-group">
 
-                @foreach($categories as $category)
-                <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
-{{--
-{{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
+                   @foreach($categories as $category)
+                   <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+   {{--
+   {{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
 
 
 {{--                    </div>--}}
-                @endforeach
-            </div>
+{{-- @endforeach--}}
+</div>
 
-        </div>
-        <!-- /.col-lg-3 -->
+</div>
+<!-- /.col-lg-3 -->
 
-        <div class="col-lg-9">
+<div class="col-lg-9">
 
 @yield('content')
 
 
-        </div>
-        <!-- /.col-lg-9 -->
+</div>
+<!-- /.col-lg-9 -->
 
-    </div>
-    <!-- /.row -->
+</div>
+<!-- /.row -->
 
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
-    <!-- /.container -->
+<div class="container">
+<p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+</div>
+<!-- /.container -->
 </footer>
 
 <!-- Bootstrap core JavaScript -->
