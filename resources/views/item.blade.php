@@ -3,6 +3,7 @@
 
 
 <div class="main-content">
+
     <div class="card mt-4" style="margin-top: 0px!important;">
     <img class="card-img-top img-fluid foto" src="{{asset('images/rose.jpeg')}}" alt="">
 {{--        <div ><img class="img-responsive" src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>--}}

@@ -147,15 +147,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Narcis\public\images" />
-      <recent name="C:\xampp\htdocs\Narcis\bootstrap" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\narciss\Narcis\public\images" />
       <recent name="C:\xampp\htdocs\Narcis\public\images" />
       <recent name="C:\xampp\htdocs\Narcis\public" />
       <recent name="C:\xampp\htdocs\" />
       <recent name="C:\xampp\htdocs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Narcis\public\images" />
+      <recent name="C:\xampp\htdocs\Narcis\bootstrap" />
     </key>
   </component>
   <component name="RunManager">
