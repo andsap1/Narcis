@@ -147,15 +147,16 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Narcis\public\images" />
-      <recent name="C:\xampp\htdocs\Narcis\bootstrap" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\narciss\Narcis\public\images" />
       <recent name="C:\xampp\htdocs\Narcis\public\images" />
       <recent name="C:\xampp\htdocs\Narcis\public" />
       <recent name="C:\xampp\htdocs\" />
       <recent name="C:\xampp\htdocs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Narcis\public\images" />
+      <recent name="C:\xampp\htdocs\Narcis\bootstrap" />
     </key>
   </component>
   <component name="RunManager">
@@ -209,5 +210,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605220738619" />
+    <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605223614313">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="794" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605223614313" />
   </component>
 </project>

@@ -19,19 +19,31 @@
 </head>
 
 <body>
+<style>
+    /* Modify the background color */
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    .navbar-custom {
+        background-color: #413348;
+    }
+    /* Modify brand and text color */
+
+    .navbar-custom .navbar-brand
+
+
+</style>
+
+
+<nav class="navbar navbar-custom navbar-expand-lg navbar-dark  fixed-top ">
     <div class="container">
 {{--        <a class="navbar-brand" href="#">Start Bootstrap</a>--}}
-        <img style="width: 230px; height: 90px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
+        <img style="width: 230px; height: 100px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Gėlės
+                    <a class="nav-link" href="{{action('ShopController@index')}}">Gėlės
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -45,7 +57,10 @@
                     <a class="nav-link" href="#">Kontaktai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://narcis.lt/login">Prisijungti</a>
+                    <a class="nav-link" href="{{action('ShopController@reviews')}}">Atsiliepimai</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Prisijungti</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Registruotis</a>
@@ -61,44 +76,44 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <h1 class="lg-4">Filtravimas</h1>
+            @yield('filter') {{--   <h3 class="lg-3">Filtravimas</h3>--}}
 
 
-            <div class="list-group">
-                <h4 class="list-group-item">Kategorijos</h4>
-                @foreach($categories as $category)
-                <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
-{{--
-{{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
+            @yield('category'){{--   <div class="list-group">
+                   <h4 class="list-group-item">Kategorijos</h4>
+                     @foreach($categories as $category)
+                     <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+     {{--
+     {{--                    --}}{{--                <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>--}}
 
 
 {{--                    </div>--}}
-                @endforeach
-            </div>
+{{-- @endforeach--}}
+</div>
 
-        </div>
-        <!-- /.col-lg-3 -->
+</div>
+<!-- /.col-lg-3 -->
 
-        <div class="col-lg-9">
-            <h4 class="lg-4">Rikiavimas</h4>
+<div class="col-lg-9">
+@yield('sort')
 @yield('content')
 
 
-        </div>
-        <!-- /.col-lg-9 -->
+</div>
+<!-- /.col-lg-9 -->
 
-    </div>
-    <!-- /.row -->
+</div>
+<!-- /.row -->
 
 </div>
 <!-- /.container -->
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
-    <!-- /.container -->
+<div class="container">
+<p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+</div>
+<!-- /.container -->
 </footer>
 
 <!-- Bootstrap core JavaScript -->

@@ -1,6 +1,8 @@
 @extends('app')
 @section('content')
-<div class="main-content">
+
+    <div class="main-content">
+
 
 {{--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">--}}
 {{--    <ol class="carousel-indicators">--}}
@@ -30,6 +32,8 @@
 {{--</div>--}}
 
 <div class="row">
+
+
     @foreach($items as $item)
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
@@ -130,6 +134,40 @@
         </div>
     </div>
 
+
 </div>
 </div>
+    @endsection
+@section('filter')
+    <h3 class="lg-3" >Filtravimas</h3>
+    @endsection
+
+@section('category')
+    <div class="list-group">
+
+        <!-- Search form -->
+        <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">
+        <h5 class="list-group-item">Kategorijos</h5>
+        @foreach($categories as $category)
+            <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+
+    @endforeach
+        <h5 class="list-group-item">Spalvos</h5>
+    @endsection
+        @section('sort')
+            <select name="amount" style="float: right;" id="">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            <text class="lg-4" style="float: right; padding-right: 10px">Prekių skaičius puslapyje </text>
+
+        <h5 class="lg-4"  >Rikiavimas </h5>
+            <select name="amount"  id="">
+                <option value="A">1-100 (Kaina nuo mažiausios)</option>
+                <option value="Z">100-1 (Kaina nuo didžiausios)</option>
+
+            </select>
+
+
     @endsection
