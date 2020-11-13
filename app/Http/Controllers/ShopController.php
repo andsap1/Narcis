@@ -48,4 +48,7 @@ class ShopController extends Controller
     public function reviews(){
         return view('review');
     }
+    public function reviews(){
+        return view('login1');
+    }
 }
