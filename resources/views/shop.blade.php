@@ -144,14 +144,22 @@
 
 @section('category')
     <div class="list-group">
-        <h4 class="list-group-item">Paieška</h4>
-        <h4 class="list-group-item">Kategorijos</h4>
+        <h5 class="list-group-item">Paieška</h5>
+        <h5 class="list-group-item">Kategorijos</h5>
         @foreach($categories as $category)
             <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
 
     @endforeach
-        <h4 class="list-group-item">Spalvos</h4>
+        <h5 class="list-group-item">Spalvos</h5>
     @endsection
         @section('sort')
+            <select name="amount" style="float: right;" id="">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            <text class="lg-4" style="float: right;">Prekių skaičius puslapyje</text>
+
         <h4 class="lg-4">Rikiavimas</h4>
+
     @endsection
