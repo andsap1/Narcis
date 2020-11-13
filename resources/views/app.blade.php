@@ -60,7 +60,7 @@
                     <a class="nav-link" href="{{action('ShopController@reviews')}}">Atsiliepimai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Prisijungti</a>
+                    <a class="nav-link" href="{{action('ShopController@login')}}">Prisijungti</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Registruotis</a>
