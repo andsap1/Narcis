@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container align-content-center">
+    <div class="row justify-content-md-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Prisijungti') }}</div>
