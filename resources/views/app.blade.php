@@ -19,12 +19,24 @@
 </head>
 
 <body>
+<style>
+    /* Modify the background color */
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    .navbar-custom {
+        background-color: #413348;
+    }
+    /* Modify brand and text color */
+
+    .navbar-custom .navbar-brand
+
+
+</style>
+
+
+<nav class="navbar navbar-custom navbar-expand-lg navbar-dark  fixed-top ">
     <div class="container">
 {{--        <a class="navbar-brand" href="#">Start Bootstrap</a>--}}
-        <img style="width: 230px; height: 90px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
+        <img style="width: 230px; height: 100px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
