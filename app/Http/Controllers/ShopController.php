@@ -36,6 +36,13 @@ class ShopController extends Controller
 //        $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
 //        $comments=Komentaras::where('fk_preke','=',$id)->get();
         return view('item', compact('item','categories', 'categoryname','mainphoto'));
+    
+    }
+    public function login(){
+        $items = Preke::all();
+        $categories=Kategorija::all();
+        
+        return view('login', compact('items','categories'));
 
     }
 }

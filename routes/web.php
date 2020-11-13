@@ -19,4 +19,4 @@ Route::get('/', function () {
 
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
-
+Route::get('/login','ShopController@login');

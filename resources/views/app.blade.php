@@ -45,7 +45,7 @@
                     <a class="nav-link" href="#">Kontaktai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Prisijungti</a>
+                    <a class="nav-link" href="http://narcis.lt/login">Prisijungti</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Registruotis</a>
