@@ -42,7 +42,7 @@ class ShopController extends Controller
         $items = Preke::all();
         $categories=Kategorija::all();
         
-        return view('login', compact('items','categories'));
+        return view('login1', compact('items','categories'));
 
     }
 }
