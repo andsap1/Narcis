@@ -139,12 +139,14 @@
 </div>
     @endsection
 @section('filter')
-    <h3 class="lg-3">Filtravimas</h3>
+    <h3 class="lg-3" >Filtravimas</h3>
     @endsection
 
 @section('category')
     <div class="list-group">
-        <h5 class="list-group-item">Paieška</h5>
+
+        <!-- Search form -->
+        <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">
         <h5 class="list-group-item">Kategorijos</h5>
         @foreach($categories as $category)
             <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
@@ -158,8 +160,14 @@
                 <option value="25">25</option>
                 <option value="50">50</option>
             </select>
-            <text class="lg-4" style="float: right;">Prekių skaičius puslapyje</text>
+            <text class="lg-4" style="float: right; padding-right: 10px">Prekių skaičius puslapyje </text>
 
-        <h4 class="lg-4">Rikiavimas</h4>
+        <h5 class="lg-4"  >Rikiavimas </h5>
+            <select name="amount"  id="">
+                <option value="A">1-100 (Kaina nuo mažiausios)</option>
+                <option value="Z">100-1 (Kaina nuo didžiausios)</option>
+
+            </select>
+
 
     @endsection
