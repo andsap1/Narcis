@@ -23,7 +23,7 @@
                                 </p>
                                 <div class="clearfix"></div>
                                 <p>{{$item->tekstas}}</p>
-
+                                <a href="{{action('ShopController@editReview',$item->id_Atsiliepimas)}}">Redaguoti</a>
 
                 </div>
                         </div>
