@@ -12,16 +12,36 @@
         <div class="card-body">
         <h3 class="card-title">{{$item->pavadinimas}}</h3>
 {{-- <img class=" img-fluid foto" align="right" src="{{asset('images/shopping-cart_1f6d2.png')}}" alt="">--}}
-            <a href="#" class="btn btn-dark"  style="float: right;" >Užsakyti</a>
-<h4>{{$item->kaina}} Eur</h4>
 
-<p class="card-text">{{$item->aprasymas}}</p>
 
-<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-4.0 stars
-</div>
+            <h4>{{$item->kaina}} Eur</h4>
+
+            <p class="card-text">{{$item->aprasymas}}</p>
+            <div>
+            <form method="POST" action="{{Route('insertItem')}}">
+
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div style="float: right">
+                    <span for="kiekis">Kiekis:</span>
+                    <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
+                </div>
+                <br>
+
+                <select name="preke" style="visibility: hidden">
+                    <option value="{{$item->id_Preke}}">
+                    </option>
+                </select>
+
+                <div>
+                    <span id="cart-button"><button type="submit" class="btn btn-dark"  style="float: right;" >Užsakyti</button></span>
+                </div>
+            </form>
+            </div>
+
+{{--            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>--}}
+        </div>
 </div>
 <!-- /.card -->
-
+</div>
 
 @endsection

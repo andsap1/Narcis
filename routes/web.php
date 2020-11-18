@@ -23,3 +23,4 @@ Route::get('/atsiliepimai','ShopController@reviews');
 Route::get('/login','ShopController@login');
 Route::get('/atsiliepimai/naujas', 'ShopController@newReview');
 Route::get('/atsiliepimai/redaguoti/{id}', 'ShopController@editReview');
+Route::post('/item/insert', 'ShopController@insertPrekeKrepselis')->name('insertItem');

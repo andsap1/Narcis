@@ -31,16 +31,32 @@
 
 
 </style>
-
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <p>{!! \Session::get('success') !!}</p>
+    </div>
+@endif
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <p>There is an error in the data you are entering:</p>
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
 
 <nav class="navbar navbar-custom navbar-expand-lg navbar-dark  fixed-top ">
-    <div class="container">
+    <div class="container col-11">
 {{--        <a class="navbar-brand" href="#">Start Bootstrap</a>--}}
-        <img style="width: 230px; height: 100px" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+           <div class="col-lg-3">
+               <img class="logo" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
+           </div>
+<div class="col-lg-9">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{action('ShopController@index')}}">Gėlės
@@ -67,7 +83,22 @@
                 </li>
             </ul>
         </div>
+        </div>
     </div>
+    <div class="col-1">
+{{--        <div class="cart-item">--}}
+            <a href="{{asset('cart')}}">
+                <img class="cart" src="{{asset('images/shopping-cart.png')}}"  />
+            </a>
+            {{--                <div class="cart_count"><span>--}}
+            {{--                    @if(session()->has('kiekis'))--}}
+            {{--                            {{session('kiekis')}}--}}
+            {{--                        @else--}}
+            {{--                            0--}}
+            {{--                        @endif--}}
+            {{--                </span></div>--}}
+        </div>
+{{--    </div>--}}
 </nav>
 
 <!-- Page Content -->

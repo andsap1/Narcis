@@ -36,3 +36,23 @@ a {
 .navbar-custom .navbar-text {
     color: green;
 }
+.logo{
+   width: 230px;
+}
+@media only screen and (max-width: 1150px) {
+    .logo{ max-width: 150px;}
+}
+
+.cart{
+    max-width: 50px;
+    width: 100%;
+    min-width: 30px;
+}
+@media only screen and (max-width: 830px) {
+    .cart {
+        max-width: 30px;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
