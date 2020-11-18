@@ -76,10 +76,10 @@
                     <a class="nav-link" href="{{action('ShopController@reviews')}}">Atsiliepimai</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{action('ShopController@login')}}">Prisijungti</a>
+                    <a class="nav-link" href="{{asset('login')}}">Prisijungti</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Registruotis</a>
+                    <a class="nav-link" href="{{asset('register')}}">Registruotis</a>
                 </li>
             </ul>
         </div>
@@ -140,7 +140,7 @@
 <!-- /.container -->
 
 <!-- Footer -->
-<footer class="py-5 bg-dark" >
+<footer class="py-5 bg-dark" style="margin-top: 60px">
 <div class="container">
 <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
 </div>

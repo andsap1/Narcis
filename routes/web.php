@@ -20,8 +20,17 @@ Route::get('/', function () {
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
 Route::get('/atsiliepimai','ShopController@reviews');
-Route::get('/login','ShopController@login');
+
 Route::get('/atsiliepimai/naujas', 'ShopController@newReview');
 Route::get('/atsiliepimai/redaguoti/{id}', 'ShopController@editReview');
 Route::post('/item/insert', 'ShopController@insertPrekeKrepselis')->name('insertItem');
 Route::get('/cart', 'CartController@index')->name('cart');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/signout', 'ShopController@signout');
+    });
+
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

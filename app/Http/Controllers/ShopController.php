@@ -13,12 +13,14 @@ use App\Models\Preke;
 use App\Models\PrekeKrepselis;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class ShopController extends Controller
 {
+
     public function index(){
            $items = Preke::all();
            $categories=Kategorija::all();
@@ -41,13 +43,12 @@ class ShopController extends Controller
         return view('item', compact('item','categories', 'categoryname','mainphoto'));
 
     }
-    public function login(){
-        $items = Preke::all();
-        $categories=Kategorija::all();
 
-        return view('login1', compact('items','categories'));
-
+    public function signout(){
+        Auth::logout();
+        return Redirect::to('shop')->with('success', 'Loged out');
     }
+
     public function reviews(){
         $items = Atsiliepimas::all();
 
