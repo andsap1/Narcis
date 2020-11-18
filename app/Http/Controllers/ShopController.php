@@ -50,4 +50,7 @@ class ShopController extends Controller
         $items = Atsiliepimas::all();
         return view('review', compact('items'));
     }
+    public function newReview(){
+        return view('new_review');
+    }
 }

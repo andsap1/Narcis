@@ -19,5 +19,6 @@ Route::get('/', function () {
 
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
-Route::get('/reviews','ShopController@reviews');
+Route::get('/atsiliepimai','ShopController@reviews');
 Route::get('/login','ShopController@login');
+Route::get('/atsiliepimai/naujas', 'ShopController@newReview');

@@ -31,8 +31,9 @@
 
             @endforeach
 
-                            
-            <a href="#" class="btn btn-dark">Leave a Review</a>
+
+            <a href="{{ action('ShopController@newReview')}}" class="btn btn-dark">Leave a Review</a>
+
         </div>
     </div>
     </div>
