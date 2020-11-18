@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Atsiliepimas;
 use App\Models\Kategorija;
 use App\Models\Nuotrauka;
 use App\Models\Preke;
@@ -36,16 +37,17 @@ class ShopController extends Controller
 //        $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
 //        $comments=Komentaras::where('fk_preke','=',$id)->get();
         return view('item', compact('item','categories', 'categoryname','mainphoto'));
-    
+
     }
     public function login(){
         $items = Preke::all();
         $categories=Kategorija::all();
-        
+
         return view('login1', compact('items','categories'));
 
     }
     public function reviews(){
-        return view('review');
+        $items = Atsiliepimas::all();
+        return view('review', compact('items'));
     }
 }
