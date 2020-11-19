@@ -46,7 +46,7 @@ class ShopController extends Controller
 
     public function signout(){
         Auth::logout();
-        return Redirect::to('/')->with('success', 'Logged out');
+        return Redirect::to('/')->with('success', 'Jūs atsijungėte.');
     }
 
 

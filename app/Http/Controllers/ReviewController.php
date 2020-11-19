@@ -10,8 +10,10 @@ class ReviewController extends Controller
 {
     public function reviews(){
         $items = Atsiliepimas::all();
+        $user = auth()->user();
+        $name = $user->name;
 
-        return view('review', compact('items'));
+        return view('review', compact('items', 'name'));
     }
     public function newReview(){
         return view('new_review');
@@ -26,7 +28,7 @@ class ReviewController extends Controller
         $atsiliepimai -> tekstas = $request->input('content');
 
         $atsiliepimai->save();
-        return Redirect::to('/')->with('success', 'Atsiliepimas pridėtas');
+        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas');
     }
 
     public function editReview($id){
