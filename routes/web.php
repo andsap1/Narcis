@@ -24,6 +24,7 @@ Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');
 Route::post('atsiliepimai/naujas/','ReviewController@addReview');
 Route::get('/atsiliepimai/redaguoti/{id}', 'ReviewController@editReview');
+Route::post('/atsiliepimai/redaguotii/{id}', 'ReviewController@editedReview');
 
 Route::post('/item/insert', 'ShopController@insertPrekeKrepselis')->name('insertItem');
 Route::get('/cart', 'CartController@index')->name('cart');

@@ -28,12 +28,23 @@ class ReviewController extends Controller
         $atsiliepimai -> tekstas = $request->input('content');
 
         $atsiliepimai->save();
-        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas');
+        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas!');
     }
 
     public function editReview($id){
         $item = Atsiliepimas::where('id_Atsiliepimas', '=', $id)->first();
 
         return view('edit_review', compact('item'));
+    }
+
+    public function editedReview(Request $request, $id)
+    {
+        $atsiliepimai= Atsiliepimas::where('id_atsiliepimas', '=', $id)->first();
+        $atsiliepimai -> tekstas = $request->input('content');
+        $atsiliepimai->save();
+
+        //$atsiliepimas = Atsiliepimas::where('id_atsiliepimas', '=', $id)->first()->update($request);
+
+        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas redaguotas!');
     }
 }

@@ -6,7 +6,7 @@
             <div class="col-md-12 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('kurejas/pridetiKureja/') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/atsiliepimai/redaguotii',$item->getkey()) }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
