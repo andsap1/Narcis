@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Atsiliepimas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ReviewController extends Controller
 {
@@ -15,6 +16,19 @@ class ReviewController extends Controller
     public function newReview(){
         return view('new_review');
     }
+
+    public function addReview(Request $request){
+
+        $user = auth()->user();
+
+        $atsiliepimai = new Atsiliepimas();
+        $atsiliepimai -> naudotojo_vardas = $user->name;
+        $atsiliepimai -> tekstas = $request->input('content');
+
+        $atsiliepimai->save();
+        return Redirect::to('/')->with('success', 'Atsiliepimas pridėtas');
+    }
+
     public function editReview($id){
         $item = Atsiliepimas::where('id_Atsiliepimas', '=', $id)->first();
 
