@@ -19,10 +19,11 @@ Route::get('/', function () {
 
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
-Route::get('/atsiliepimai','ShopController@reviews');
 
-Route::get('/atsiliepimai/naujas', 'ShopController@newReview');
-Route::get('/atsiliepimai/redaguoti/{id}', 'ShopController@editReview');
+Route::get('/atsiliepimai','ReviewController@reviews');
+Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');
+Route::get('/atsiliepimai/redaguoti/{id}', 'ReviewController@editReview');
+
 Route::post('/item/insert', 'ShopController@insertPrekeKrepselis')->name('insertItem');
 Route::get('/cart', 'CartController@index')->name('cart');
 

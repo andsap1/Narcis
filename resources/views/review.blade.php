@@ -23,7 +23,7 @@
                                 </p>
                                 <div class="clearfix"></div>
                                 <p>{{$item->tekstas}}</p>
-                                <a href="{{action('ShopController@editReview',$item->id_Atsiliepimas)}}">Redaguoti</a>
+                                <a href="{{action('ReviewController@editReview',$item->id_Atsiliepimas)}}">Redaguoti</a>
 
                 </div>
                         </div>
@@ -32,7 +32,7 @@
             @endforeach
 
                     @auth
-            <a href="{{ action('ShopController@newReview')}}" class="btn btn-dark">Leave a Review</a>
+            <a href="{{ action('ReviewController@newReview')}}" class="btn btn-dark">Leave a Review</a>
                     @endauth
 
 
