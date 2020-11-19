@@ -23,10 +23,12 @@
                                 </p>
                                 <div class="clearfix"></div>
                                 <p>{{$item->tekstas}}</p>
-                                @if ($name == $item->naudotojo_vardas)
+@auth
+                                @if(Auth::user()->name == $item->naudotojo_vardas)
 
                                 <a href="{{action('ReviewController@editReview',$item->id_Atsiliepimas)}}">Redaguoti</a>
                                     @endif
+                                @endauth
 
                 </div>
                         </div>

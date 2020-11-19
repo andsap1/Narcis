@@ -10,10 +10,10 @@ class ReviewController extends Controller
 {
     public function reviews(){
         $items = Atsiliepimas::all();
-        $user = auth()->user();
-        $name = $user->name;
 
-        return view('review', compact('items', 'name'));
+
+
+        return view('review', compact('items'));
     }
     public function newReview(){
         return view('new_review');
