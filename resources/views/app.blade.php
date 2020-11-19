@@ -58,7 +58,7 @@
            </div>
 <div class="col-lg-9">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{action('ShopController@index')}}">Gėlės
                         <span class="sr-only">(current)</span>
                     </a>
@@ -75,12 +75,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{action('ShopController@reviews')}}">Atsiliepimai</a>
                 </li>
+                @guest
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset('login')}}">Prisijungti</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset('register')}}">Registruotis</a>
                 </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{action('ShopController@signout')}}">Atsijungti</a>
+                    </li>
+                @endguest
             </ul>
         </div>
         </div>
