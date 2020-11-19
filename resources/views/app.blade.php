@@ -86,7 +86,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{action('ShopController@signout')}}">Atsijungti</a>
                     </li>
-                @endguest
+
             </ul>
         </div>
         </div>
@@ -96,6 +96,7 @@
             <a href="{{asset('cart')}}">
                 <img class="cart" src="{{asset('images/shopping-cart.png')}}"  />
             </a>
+        @endguest
             {{--                <div class="cart_count"><span>--}}
             {{--                    @if(session()->has('kiekis'))--}}
             {{--                            {{session('kiekis')}}--}}

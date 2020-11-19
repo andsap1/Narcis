@@ -31,13 +31,11 @@
 
             @endforeach
 
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-
+                    @auth
             <a href="{{ action('ShopController@newReview')}}" class="btn btn-dark">Leave a Review</a>
-                    @endif
+                    @endauth
+
+
         </div>
     </div>
     </div>
