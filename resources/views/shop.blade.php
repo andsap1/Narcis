@@ -160,14 +160,10 @@
                 <option value="25">25</option>
                 <option value="50">50</option>
             </select>
-            <text class="lg-4" style="float: right; padding-right: 10px">Prekių skaičius puslapyje </text>
 
-        <h5 class="lg-4"  >Rikiavimas </h5>
-            <select name="amount"  id="">
-                <option value="A">1-100 (Kaina nuo mažiausios)</option>
-                <option value="Z">100-1 (Kaina nuo didžiausios)</option>
+            <h5 class="lg-4" align="right" >Prekių skaičius puslapyje </h5>
 
-            </select>
+
 
 
     @endsection
