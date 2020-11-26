@@ -37,7 +37,7 @@
             @endforeach
 
                     @auth
-            <a href="{{ action('ReviewController@newReview')}}" class="btn btn-dark">Leave a Review</a>
+            <a href="{{ action('ReviewController@newReview')}}" class="btn btn-dark">Palikti atsiliepimą</a>
                     @endauth
 
 

@@ -26,6 +26,7 @@ class ReviewController extends Controller
         $atsiliepimai = new Atsiliepimas();
         $atsiliepimai -> naudotojo_vardas = $user->name;
         $atsiliepimai -> tekstas = $request->input('content');
+        $atsiliepimai -> fk_naudotojasid_Naudotojas = $user->id;
 
         $atsiliepimai->save();
         return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas!');

@@ -44,11 +44,21 @@
         </div>
         <h3 align="center">Įvertinkite prekę!</h3>
         <div id="banner" align="center">
-        <img  src="{{asset('images/banana.png')}}" alt="" width="75" height="75">
+        <img  src="{{asset('images/banana.png')}}" onClick="changevar()" alt="" width="75" height="75">
         <img  src="{{asset('images/alien.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/red-heart.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/thumbs-up.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/tree.png')}}" alt="" width="75" height="75">
+        </div>
+
+
+
+        <div align="center">
+            0
+            0
+            0
+            0
+            0
         </div>
 </div>
 <!-- /.card -->
