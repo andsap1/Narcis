@@ -43,7 +43,7 @@ class LoginController extends Controller
     }
     public function logout(Request $request) {
         Auth::logout();
-        return redirect('/')->with('success', 'Jūs atsijungėte.');
+        return redirect('admin_login')->with('success', 'Jūs atsijungėte.');
     }
     public function showAdminLoginForm()
     {
@@ -63,4 +63,5 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
 }

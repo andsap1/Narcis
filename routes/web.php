@@ -33,8 +33,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/signout', 'ShopController@signout');
     });
 
-Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
-Route::post('/login/admin', 'Auth\LoginController@adminLogin') ->name('admin.login.submit');
+Route::get('/admin/login', 'Auth\LoginController@showAdminLoginForm');
+Route::post('/admin/login', 'Auth\LoginController@adminLogin') ->name('admin.login.submit');
+
+Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
+    Route::get('/admin', 'AdminController@index')->name('admin_app');
+    Route::get('/admin/signout', 'AdminController@adminSignout')->name('admin_logout');
+
+});
 
 
 //Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
