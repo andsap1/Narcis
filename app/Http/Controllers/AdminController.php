@@ -13,12 +13,18 @@ class AdminController extends Controller
         $items = Preke::paginate(4);
         $categories=Kategorija::all();
 
-        return view('admin_app', compact('items','categories'));
+        return view('admin_app');
     }
 
     public function adminSignout()
     {
         Auth::guard('admin')->logout();
         return redirect('/admin/login/');
+    }
+    public function products(){
+        $items = Preke::all();
+        $categories=Kategorija::all();
+
+        return view('product', compact('items','categories'));
     }
 }

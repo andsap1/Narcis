@@ -52,7 +52,7 @@
             <div class="col-lg-9">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{action('ShopController@index')}}">Gėlės
+                        <a class="nav-link" href="{{route('adminRoutes.products')}}">Gėlės
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>

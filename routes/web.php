@@ -39,6 +39,7 @@ Route::post('/admin/login', 'Auth\LoginController@adminLogin') ->name('admin.log
 Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin_app');
     Route::get('/admin/signout', 'AdminController@adminSignout')->name('admin_logout');
+    Route::get('/admin/products', 'AdminController@products')->name('products');
 
 });
 
