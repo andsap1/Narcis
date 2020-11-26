@@ -2,8 +2,8 @@
 
 @section('content')
 
-{{--    <a href="{{action('AdminController@addProduct')}}" id="green_btn" class="btn btn-primary" style="width: 120px; margin-left: 30px">--}}
-{{--        Add product</a>--}}
+    <a href="{{action('AdminController@addProduct')}}" id="green_btn" class="btn btn-primary" style="width: 120px; margin-left: 30px">
+        Add product</a>
     <ul class="col-md-12">
 
 {{--        @include('productsearch')--}}

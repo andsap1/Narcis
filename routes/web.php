@@ -40,6 +40,8 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin_app');
     Route::get('/admin/signout', 'AdminController@adminSignout')->name('admin_logout');
     Route::get('/admin/products', 'AdminController@products')->name('products');
+    Route::post('/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
+    Route::get('/manageProduct', 'AdminController@addProduct')->name('addProduct');
 
 });
 
