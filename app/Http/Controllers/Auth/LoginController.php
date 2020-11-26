@@ -43,7 +43,7 @@ class LoginController extends Controller
     }
     public function logout(Request $request) {
         Auth::logout();
-        return redirect('shop');
+        return redirect('/')->with('success', 'Jūs atsijungėte.');
     }
     public function showAdminLoginForm()
     {
