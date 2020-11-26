@@ -54,7 +54,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
            <div class="col-lg-3">
-               <img class="logo" src="{{asset('images/final1.png')}}"  class="rounded float-left" alt="...">
+               <img class="logo" src="{{asset('images/logo-white.png')}}"  class="rounded float-left" alt="...">
            </div>
 <div class="col-lg-9">
             <ul class="navbar-nav ml-auto">
@@ -85,6 +85,9 @@
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{action('ShopController@signout')}}">Atsijungti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{action('#')}}">Paskyra</a>
                     </li>
 
             </ul>
