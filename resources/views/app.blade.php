@@ -54,7 +54,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
            <div class="col-lg-3">
-               <img class="logo" src="{{asset('images/logo-white.png')}}"  class="rounded float-left" alt="...">
+               <img class="logo" src="{{asset('images/ezgif.com-gif-maker.gif')}}"  class="rounded float-left" alt="...">
            </div>
 <div class="col-lg-9">
             <ul class="navbar-nav ml-auto">
