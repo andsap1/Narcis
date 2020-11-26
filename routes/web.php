@@ -33,6 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/signout', 'ShopController@signout');
     });
 
+Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
+Route::post('/login/admin', 'Auth\LoginController@adminLogin') ->name('admin.login.submit');
+
+
 //Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();
