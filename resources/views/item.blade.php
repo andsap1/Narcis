@@ -5,8 +5,9 @@
 <div class="main-content">
 
     <div class="card mt-4 justify-content-center" style="margin-top: 0px!important;">
-
-    <img class="card-img-top img-fluid foto" src="{{asset('images/rose.jpeg')}}" alt="">
+        <div align="center">
+    <img  src="{{asset('images/rose.jpeg')}}" alt="" width="355" height="275">
+        </div>
 {{--        <div ><img class="img-responsive" src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>--}}
 
         <div class="card-body">
@@ -42,7 +43,7 @@
 {{--            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>--}}
         </div>
         <h3 align="center">Įvertinkite prekę!</h3>
-        <div id="banner" align="center" ">
+        <div id="banner" align="center">
         <img  src="{{asset('images/banana.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/alien.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/red-heart.png')}}" alt="" width="75" height="75">
