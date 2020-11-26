@@ -22,7 +22,7 @@ class ShopController extends Controller
 {
 
     public function index(){
-           $items = Preke::all();
+           $items = Preke::paginate(4);
            $categories=Kategorija::all();
 
         return view('shop', compact('items','categories'));

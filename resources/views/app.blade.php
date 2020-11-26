@@ -87,7 +87,7 @@
                         <a class="nav-link" href="{{action('ShopController@signout')}}">Atsijungti</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{action('#')}}">Paskyra</a>
+                        <a class="nav-link" href="#">Paskyra</a>
                     </li>
 
             </ul>

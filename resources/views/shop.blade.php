@@ -133,8 +133,9 @@
             </div>
         </div>
     </div>
-
-
+<div align="center">
+        {{$items->links("pagination::bootstrap-4") }}
+</div>
 </div>
 </div>
     @endsection
@@ -155,15 +156,17 @@
         <h5 class="list-group-item">Spalvos</h5>
     @endsection
         @section('sort')
+
             <select name="amount" style="float: right;" id="">
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
             </select>
 
-            <h5 class="lg-4" align="right" >Prekių skaičius puslapyje </h5>
+            <h5 class="lg-4" align="right"  >Prekių skaičius puslapyje  &nbsp; </h5>
 
 
 
 
     @endsection
+
