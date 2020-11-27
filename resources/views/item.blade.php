@@ -44,21 +44,32 @@
         </div>
         <h3 align="center">Įvertinkite prekę!</h3>
         <div id="banner" align="center">
+
+
+            <h5 class="list-group-item">
+
+
+
+
+
+
         <img  src="{{asset('images/banana.png')}}" onClick="changevar()" alt="" width="75" height="75">
-        <img  src="{{asset('images/alien.png')}}" alt="" width="75" height="75">
+
+            <img  src="{{asset('images/alien.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/red-heart.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/thumbs-up.png')}}" alt="" width="75" height="75">
         <img  src="{{asset('images/tree.png')}}" alt="" width="75" height="75">
+            </h5>
         </div>
 
 
 
         <div align="center">
-            0
-            0
-            0
-            0
-            0
+            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         </div>
 </div>
 <!-- /.card -->
