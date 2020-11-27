@@ -51,6 +51,7 @@
             </div>
             <div class="col-lg-9">
                 <ul class="navbar-nav ml-auto">
+                    @auth('admin')
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('adminRoutes.products')}}">Gėlės
                             <span class="sr-only">(current)</span>
@@ -68,7 +69,7 @@
                     <li class="nav-item">
 {{--                        <a class="nav-link" href="{{action('ReviewController@reviews')}}">Atsiliepimai</a>--}}
                     </li>
-                    @auth('admin')
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{Route('adminRoutes.admin_logout')}}">Atsijungti</a>
                         </li>
