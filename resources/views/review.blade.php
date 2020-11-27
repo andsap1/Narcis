@@ -24,7 +24,7 @@
                                 <div class="clearfix"></div>
                                 <p>{{$item->tekstas}}</p>
 @auth
-                                @if(Auth::user()->name == $item->naudotojo_vardas)
+                                @if(Auth::user()->id == $item->fk_Naudotojasid_Naudotojas)
 
                                 <a href="{{action('ReviewController@editReview',$item->id_Atsiliepimas)}}">Redaguoti</a>
                                     @endif
