@@ -2,7 +2,10 @@
 @section('content')
 
 
-<div class="main-content">
+
+
+
+    <div class="main-content">
 
     <div class="card mt-4 justify-content-center" style="margin-top: 0px!important;">
         <div align="center">
@@ -42,35 +45,43 @@
 
 {{--            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>--}}
         </div>
+    </div>
+
         <h3 align="center">Įvertinkite prekę!</h3>
-        <div id="banner" align="center">
-
-
-            <h5 class="list-group-item">
 
 
 
-
-
-
-        <img  src="{{asset('images/banana.png')}}" onClick="changevar()" alt="" width="75" height="75">
-
-            <img  src="{{asset('images/alien.png')}}" alt="" width="75" height="75">
-        <img  src="{{asset('images/red-heart.png')}}" alt="" width="75" height="75">
-        <img  src="{{asset('images/thumbs-up.png')}}" alt="" width="75" height="75">
-        <img  src="{{asset('images/tree.png')}}" alt="" width="75" height="75">
-            </h5>
+        <div class="row" align="center">
+            <div class="column" align="center">
+                <img src="{{asset('images/banana.png')}}" alt="Snow" width="75" height="75">
+                <div align="center">0</div>
+            </div>
+            <div class="column">
+                <img src="{{asset('images/alien.png')}}" alt="Forest" width="75" height="75">
+                <div align="center">0</div>
+            </div>
+            <div class="column">
+                <img src="{{asset('images/red-heart.png')}}" alt="Forest" width="75" height="75">
+                <div align="center">0</div>
+            </div>
+            <div class="column">
+                <img src="{{asset('images/thumbs-up.png')}}" alt="Forest" width="75" height="75">
+                <div align="center">0</div>
+            </div>
+            <div class="column">
+                <img src="{{asset('images/tree.png')}}" alt="Forest" width="75" height="75">
+                <div align="center">0</div>
+            </div>
+        </div>
         </div>
 
+</div>
 
 
-        <div align="center">
-            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-            0 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-        </div>
+
+
+
+
 </div>
 <!-- /.card -->
 </div>
