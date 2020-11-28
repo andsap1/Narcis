@@ -11,7 +11,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group row">
-                                <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Spalva</label>
+                                <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Pavadinimas</label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="pavadinimas" value="{{ old('pavadinimas') }}">
                                 </div>
@@ -37,6 +37,12 @@
                                 <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Kaina</label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="kaina" value="{{ old('kaina') }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Spalva</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="spalva" value="{{ old('spalva') }}">
                                 </div>
                             </div>
                             <div class="form-group row">

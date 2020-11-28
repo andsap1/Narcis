@@ -42,6 +42,8 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin/products', 'AdminController@products')->name('products');
     Route::post('/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
     Route::get('/manageProduct', 'AdminController@addProduct')->name('addProduct');
+    Route::get('/productedit/{id}','AdminController@editProduct')->name('productedit');
+    Route::post('/confirmEditedProduct/{id}', 'AdminController@confirmEditedProduct')->name('confirmEditedProduct');
 
 });
 
