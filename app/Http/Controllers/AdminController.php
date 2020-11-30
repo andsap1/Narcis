@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategorija;
 use App\Models\Preke;
 use App\Models\PrekeKrepselis;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -33,6 +34,11 @@ class AdminController extends Controller
 
         return view('product', compact('items', 'categories'));
     }
+    public function categories()
+    {
+        $items = Kategorija::all();
+        return view('categories', compact('items'));
+    }
 
     public function addProduct()
     {
@@ -48,7 +54,6 @@ class AdminController extends Controller
                 'aprasymas' => $request->input('aprasymas'),
                 'kaina' => $request->input('kaina'),
                 'spalva' => $request->input('spalva'),
-                'ikelimo_data' => $request->input('ikelimo_data'),
             ],
             [
                 'pavadinimas' => 'required|min:1|max:30',
@@ -69,12 +74,12 @@ class AdminController extends Controller
             $allPro->aprasymas = $request->input('aprasymas');
             $allPro->kaina = $request->input('kaina');
             $allPro->spalva = $request->input('spalva');
-            $allPro->ikelimo_data = $request->input('ikelimo_data');
+            $allPro->ikelimo_data = Carbon::now();
 
             $allPro->save();
 
         }
-        return Redirect::to('/product')->with('success', 'Product added');
+        return Redirect::to('admin/products')->with('success', 'Product added');
     }
 
     public function confirmEditedProduct(Request $request, $id)
@@ -98,7 +103,6 @@ class AdminController extends Controller
                 'fk_Kategorijaid' => 'required'
             ]
         );
-
 
         if ($validator->fails())
         {
@@ -148,4 +152,69 @@ class AdminController extends Controller
         Preke::where('id_Preke','=',$id)->delete();
         return Redirect::to('admin/products')->with('Prekė ištrinta');
     }
+
+///KATEGORIJA
+    public function insertCategory(Request $request)
+    {
+        $validator = Validator::make(
+            [   'pavadinimas' =>$request->input('pavadinimas')
+            ],
+            [
+                'pavadinimas' => 'required|min:1|max:30'
+            ]
+        );
+
+        if ($validator->fails())
+        {
+
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
+        else
+        {
+            $allCat = new Kategorija();
+            $allCat->pavadinimas = $request->input('pavadinimas');
+
+            $allCat->save();
+
+        }
+        return Redirect::to('admin/categories')->with('success', 'Kategorija pridėta');
+    }
+
+    public function addCategory()
+    {
+        return view('manageCategory');
+    }
+
+    public function confirmEditedCategory(Request $request, $id)
+    {
+        $validator = Validator::make(
+            [
+                'pavadinimas'=> $request->input('pavadinimas')
+            ],
+            [
+                'pavadinimas'=> 'required|max:30'
+            ]
+        );
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+        else
+        {
+            $data = Kategorija::where('id_Kategorija', '=', $id)->update(
+                [
+                    'pavadinimas'=> $request->input('pavadinimas')
+                ]
+            );
+        }
+        return Redirect::to('admin/categories')->with('success', 'Kategorija pakoreguota');
+    }
+
+    public function editCategory($id)
+    {
+        $selectedProduct = Kategorija::where('id_Kategorija','=',$id)->first();
+        return view('categoryEdit', compact('selectedProduct'));
+    }
+
 }

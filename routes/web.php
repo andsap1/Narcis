@@ -39,11 +39,18 @@ Route::post('/admin/login', 'Auth\LoginController@adminLogin') ->name('admin.log
 Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin_app');
     Route::get('/admin/signout', 'AdminController@adminSignout')->name('admin_logout');
+
     Route::get('/admin/products', 'AdminController@products')->name('products');
-    Route::post('/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
-    Route::get('/manageProduct', 'AdminController@addProduct')->name('addProduct');
-    Route::get('/productedit/{id}','AdminController@editProduct')->name('productedit');
-    Route::post('/confirmEditedProduct/{id}', 'AdminController@confirmEditedProduct')->name('confirmEditedProduct');
+    Route::post('/admin/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
+    Route::get('/admin/manageProduct', 'AdminController@addProduct')->name('addProduct');
+    Route::get('/admin/productedit/{id}','AdminController@editProduct')->name('productedit');
+    Route::post('/admin/confirmEditedProduct/{id}', 'AdminController@confirmEditedProduct')->name('confirmEditedProduct');
+
+    Route::get('/admin/categories', 'AdminController@categories')->name('categories');
+    Route::get('/admin/manageCategory', 'AdminController@addCategory')->name('addCategory');
+    Route::post('/admin/manageCategory', 'AdminController@insertCategory')->name('manageCategory');
+    Route::get('/admin/categoryEdit/{id}','AdminController@editCategory')->name('categoryEdit');
+    Route::post('/admin/confirmEditedCategory/{id}', 'AdminController@confirmEditedCategory')->name('confirmEditedCategory');
 
 });
 

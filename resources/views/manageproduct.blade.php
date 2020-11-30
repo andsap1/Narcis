@@ -7,7 +7,7 @@
                     <div class="card-header" id="antraste">Pridėti prekę</div>
 
                     <div class="card-body">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('manageProduct')}}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{asset('admin/manageProduct')}}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group row">
@@ -45,12 +45,12 @@
                                     <input type="text" class="form-control" name="spalva" value="{{ old('spalva') }}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Data</label>
-                                <div class="col-md-6">
-                                    <input type="date" class="form-control" name="ikelimo_data" value="{{ old('ikelimo_data') }}">
-                                </div>
-                            </div>
+{{--                            <div class="form-group row">--}}
+{{--                                <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Data</label>--}}
+{{--                                <div class="col-md-6">--}}
+{{--                                    <input type="date" class="form-control" name="ikelimo_data" value="{{ old('ikelimo_data') }}">--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
 
 {{--                            <div class="form-group row mb-0">--}}

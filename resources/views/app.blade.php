@@ -38,7 +38,7 @@
 @endif
 @if (count($errors) > 0)
     <div class="alert alert-danger">
-        <p>There is an error in the data you are entering:</p>
+        <p>Įvedamuose duomenyse yra klaidų::</p>
         @foreach ($errors->all() as $error)
             <p>{{ $error }}</p>
         @endforeach

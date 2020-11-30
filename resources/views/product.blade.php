@@ -14,11 +14,11 @@
                 <thead>
                 <tr style="border-bottom: 1px">
                     <th style="width:10%;border-bottom: 10px;">ID</th>
-                    <th style="width:10%;border-bottom: 10px;">Prekė</th>
+                    <th style="width:10%;border-bottom: 10px;">Pavadinimas</th>
                     <th style="width:40%;border-bottom: 10px;">Aprašymas</th>
                     <th style="width:10%;border-bottom: 10px;">Kaina</th>
-                    <th style="width:20%;border-bottom: 10px;">Įkėlimo data</th>
                     <th style="width:20%;border-bottom: 10px;">Spalva</th>
+                    <th style="width:20%;border-bottom: 10px;">Įkėlimo data</th>
                     <th style="width:10%;border-bottom: 10px;">Kategorija</th>
                 </tr>
                 </thead>
@@ -29,7 +29,7 @@
                     <td>{{ $item->pavadinimas }}</td>
                     <td>{{ $item->aprasymas }}</td>
                     <td>{{ $item->kaina }}</td>
-                    <td>{{ $item->splva }}</td>
+                    <td>{{ $item->spalva }}</td>
                     <td>{{ $item->ikelimo_data }}</td>
 
                     @foreach($categories as $cat)

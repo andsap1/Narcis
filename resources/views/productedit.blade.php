@@ -21,7 +21,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="fk_Kategorijaid">
                                     @foreach($allCat as $ct)
-                                    @if($selectedProduct->fk_Kategorijaid === $ct->id_Kategorijaorija)
+                                    @if($selectedProduct->fk_Kategorijaid === $ct->id_Kategorija)
                                     <option value="{{$selectedProduct->fk_Kategorijaid}}">{{$ct->pavadinimas}}</option>
                                     @endif
                                     @endforeach

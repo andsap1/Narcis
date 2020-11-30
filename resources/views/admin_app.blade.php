@@ -31,7 +31,7 @@
 @endif
 @if (count($errors) > 0)
     <div class="alert alert-danger">
-        <p>There is an error in the data you are entering:</p>
+        <p>Įvedamuose duomenyse yra klaidų:</p>
         @foreach ($errors->all() as $error)
             <p>{{ $error }}</p>
         @endforeach
@@ -53,12 +53,14 @@
                 <ul class="navbar-nav ml-auto">
                     @auth('admin')
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('adminRoutes.products')}}">Gėlės
+                        <a class="nav-link" href="{{route('adminRoutes.products')}}">Prekės
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-{{--                        <a class="nav-link" href="#">Susikūrk puokštę!</a>--}}
+                        <a class="nav-link" href="{{route('adminRoutes.categories')}}">Kategorijos
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
 {{--                        <a class="nav-link" href="#">Susisiek su mumis!</a>--}}
