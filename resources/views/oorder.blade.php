@@ -66,14 +66,31 @@
 
                     <td>
 
-                        
+
                 </tr>
                 </tfoot>
             </table>
             <div>Adresas:
                 <input type="text"class="form-control" value="adresas">
             </div>
+<h3 align="center">Apmokėjimas kortele</h3>
+            <div style="text-align: center;">
+            <h4 align="center">Kortelės numeris</h4>
 
+            <input style="text-align: center;" type="text" class="card-number" placeholder="xxxx-xxxx-xxxx-xxxx">
+
+                    <h5 align="">Vardas </h5>
+                    <input align="center" type="text" class="card-number" placeholder="" >
+                    <h5>Galiojimo data (mėnuo/metai)</h5>
+                    <input type="text" class="month" placeholder="mm/yy">
+                    <h5>CVV2/CVC2*</h5>
+                    <input type="text" class="month" placeholder="xxx">
+
+           <div>
+               
+            <button class="btn btn-dark">Mokėti</button>
+           </div>
+            </div>
         </div>
     </div>
 
