@@ -52,6 +52,13 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin/categoryEdit/{id}','AdminController@editCategory')->name('categoryEdit');
     Route::post('/admin/confirmEditedCategory/{id}', 'AdminController@confirmEditedCategory')->name('confirmEditedCategory');
 
+    Route::get('/admin/users', 'AdminController@users')->name('users');
+
+    Route::get('/admin/orders', 'AdminController@orders')->name('orders');
+//    Route::get('/admin/manageOrder/{id}', 'AdminController@deleteOrders')->name('deleteOrder');
+//    Route::post('/admin/manageOrder', 'AdminController@insertOrders')->name('manageOrders');
+    Route::get('/admin/orderedit/{id}','AdminController@editOrders')->name('orderedit');
+    Route::post('confirmEditedOrder/{id}', 'AdminController@confirmEditedOrders')->name('confirmEditedOrders');
 });
 
 

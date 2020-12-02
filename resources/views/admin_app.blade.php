@@ -63,14 +63,25 @@
                         </a>
                     </li>
                     <li class="nav-item">
-{{--                        <a class="nav-link" href="#">Susisiek su mumis!</a>--}}
+                        <a class="nav-link" href="{{route('adminRoutes.users')}}">Naudotojai
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-{{--                        <a class="nav-link" href="#">Kontaktai</a>--}}
+                        <a class="nav-link" href="{{route('adminRoutes.orders')}}">Užsakymai
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-{{--                        <a class="nav-link" href="{{action('ReviewController@reviews')}}">Atsiliepimai</a>--}}
+                        <a class="nav-link" href="#">Atsiliepimai
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">Gauti prenšimai
+                                <span class="sr-only">(current)</span>
+                            </a>
+                     </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{Route('adminRoutes.admin_logout')}}">Atsijungti</a>

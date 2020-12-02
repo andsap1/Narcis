@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Busena;
 use App\Models\Kategorija;
 use App\Models\Preke;
 use App\Models\PrekeKrepselis;
+use App\Models\User;
+use App\Models\Uzsakymas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -217,4 +221,80 @@ class AdminController extends Controller
         return view('categoryEdit', compact('selectedProduct'));
     }
 
+////NAUDOTOJAI
+    public function users()
+    {
+        $allNaud = User::all();
+        return view('users', compact('allNaud'));
+    }
+
+ //ORDERS
+
+    public function orders()
+    {
+        $allUz = Uzsakymas::orderByDesc('data')->paginate(10);
+        $links = $allUz ->appends(['sort' => 'data'])->links();
+        $states=Busena::all();
+        return view('orders', compact('allUz', 'links','states'));
+    }
+
+    public function confirmEditedOrders(Request $request, $id)
+    {
+        $validator = Validator::make(
+            [
+                'adresas'=> $request->input('adresas'),
+                'vardas'=> $request->input('vardas'),
+                'pavarde'=> $request->input('pavarde'),
+                'busena'=> $request->input('busena'),
+                'data'=> $request->input('data'),
+                'suma'=> $request->input('suma')
+
+            ],
+            [
+                'adresas'=> 'required|max:255',
+                'vardas'=> 'required|max:30',
+                'pavarde'=> 'required|max:30',
+                'busena'=> 'required',
+                'data'=> 'required',
+                'suma'=> 'required'
+            ]
+        );
+
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+        else
+        {
+            $data = Uzsakymas::where('id_Uzsakymas', '=', $id)->update(
+                [
+                    'adresas'=> $request->input('adresas'),
+                    'vardas'=> $request->input('vardas'),
+                    'pavarde'=> $request->input('pavarde'),
+                    'busena'=> $request->input('busena'),
+                    'data'=> $request->input('data'),
+                    'suma'=> $request->input('suma')
+                ]
+            );
+        }
+        return Redirect::to('/admin/orders')->with('success', 'Užsakymas pakoreguotas');
+    }
+
+    public function editOrders($id)
+    {
+        $selectedOrder = Uzsakymas::where('id_Uzsakymas','=',$id)->first();
+        $allOrder = Uzsakymas::all();
+        $state=Busena::where( 'id_Busena', '=',$selectedOrder->busena)->first();
+        return view('orderedit', compact('selectedOrder', 'allOrder', 'state'));
+    }
+
+//    public function deleteOrders($id)
+//    {
+//        $apmok=Apmokejimas::where('fk_Uzsakymas','=',$id)->get();
+//        foreach ($apmok as $ap) {
+//            Apmokejimas::where('id_apmokėjimas','=',$ap->id_apmokėjimas)->delete();
+//        }
+//        Uzsakymas::where('id_uzsakymas','=',$id)->delete();
+//        return Redirect::to('/orders')->with('Order deleted');
+//    }
 }
