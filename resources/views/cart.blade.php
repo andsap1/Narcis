@@ -8,14 +8,14 @@
 @section('content')
 
     <div class="container" id="cart_sonas">
-        <div class="col-lg-10 offset-lg-1">
+        <div class="col-lg-12">
             <table id="cart" class="table table-hover table-condensed" >
                 <thead>
                 <tr style="border-bottom: 0px">
-                    <th style="width:45%;border-bottom: 10px;">Product</th>
-                    <th style="width:10%;border-bottom: 10px;">Price</th>
-                    <th style="width:15%;border-bottom: 10px;">Quantity</th>
-                    <th style="width:22%;border-bottom: 10px;"class="text-center">Subtotal</th>
+                    <th style="width:45%;border-bottom: 10px;">Prekė</th>
+                    <th style="width:10%;border-bottom: 10px;">Vnt kaina</th>
+                    <th style="width:15%;border-bottom: 10px;">Kiekis</th>
+                    <th style="width:22%;border-bottom: 10px;"class="text-center">Kaina</th>
                     <th style="width:10%;border-bottom: 10px;"></th>
                 </tr>
                 </thead>
@@ -32,6 +32,7 @@
                         <td data-th="Price" id="lyg">{{$resul->kaina}} €</td>
                         <td data-th="Quantity" id="lyg" >{{$resul->kiekis}}</td>
                         <td data-th="Subtotal" class="text-center" id="lyg">{{$resul->kiekis*$resul->kaina}} €</td>
+                        <td></td>
 
 {{--                            <form method="POST" action="{{ Route('updatePreke',$resul->id_Preke_Krepselis) }}" >--}}
 {{--                                <input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
@@ -54,6 +55,7 @@
 
                 <tr>
                     <td colspan="3" class="hidden-xs"></td>
+
                     @foreach($result as $resul)
 
 
@@ -61,7 +63,7 @@
                             @break
                         </td> @endforeach
                     <td>
-                        <a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Order</a>
+                        <a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Užsakyti</a>
                 </tr>
                 </tfoot>
             </table>

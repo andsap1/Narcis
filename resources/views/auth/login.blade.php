@@ -11,6 +11,14 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <div class="form-group row justify-content-center d-flex">
+                            <a class="button blue login" href="https://www.facebook.com">Prisijungti per Facebook</a>
+                        </div>
+
+                        <div class="form-group row justify-content-center d-flex">
+                            <a class="button login" href="https://www.google.com">Prisijungti per Google</a>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('El. pašto adresas') }}</label>
 

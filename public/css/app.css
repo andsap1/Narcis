@@ -72,3 +72,45 @@ a {
     text-align:right;
     margin:0 auto;
 }
+
+.table {
+    border: 1px solid black;
+}
+
+.table th,.table td{
+    border-top: 1px solid black;
+}
+
+.table thead th{
+    border-bottom: none;
+    background-color: #F05D5E;
+}
+
+.price {
+    margin-top: 160px;
+}
+
+.img-preview {
+    max-width: 100%;
+}
+
+.button.red {
+    background-color: #F05D5E;
+}
+
+.button.blue {
+    background-color: cornflowerblue;
+}
+
+.card-header{
+    background-color: #F05D5E;
+}
+
+.button.login {
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-align: center;
+    color: black;
+}
