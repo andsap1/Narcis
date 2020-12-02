@@ -31,7 +31,29 @@ class CartController extends Controller
         return view('cart', compact('allcategories','result', 'kr'));
     }
 
+    public function order(){
+        $allcategories=Kategorija::all();
+        $kr=session('krepselis');
+        if(session()->has('krepselis')) {
+            $result=DB::table('krepselis')->where('krepselis.id_Krepselis','=',$kr)->leftJoin('preke_krepselis', 'id_Krepselis','=','preke_krepselis.fk_Krepselis')
+                ->leftJoin('preke','preke_krepselis.fk_Preke','=','id_Preke')
+                ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas',DB::raw('krepselis.suma as kr_kaina'))->get();
 
+            $visosp = DB::table('preke_krepselis')->where('preke_krepselis.fk_Krepselis','=',$kr)->get();
+            $kiekelis=0;
+            foreach ($visosp as $kk){
+                $kiekelis=$kiekelis+$kk->kiekis;
+            }
+            session(['kiekis'=>$kiekelis]);
+        }
+        else {
+            return Redirect::back();
+        }
+
+        return view('oorder', compact('allcategories','result', 'kr'));
+
+
+    }
 //    public function updatePreke($id, Request $request){
 //        $kr=session('krepselis');
 //        $preke= PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->first();
