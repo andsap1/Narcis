@@ -22,6 +22,7 @@
 
             <p class="card-text">{{$item->aprasymas}}</p>
             <div>
+
             <form method="POST" action="{{Route('insertItem')}}">
 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -37,9 +38,18 @@
                 </select>
 
                 <div>
+                   @guest
+                        <span id="cart-button"><button type="button" disabled class="btn btn-dark"  style="float: right;" >Užsakyti *
+                            </button>
+                            <br>
+                            <br>
+                        <p style="float: right">*Pirkti galima tik prisijungus</p></span>
+                    @else
                     <span id="cart-button"><button type="submit" class="btn btn-dark"  style="float: right;" >Užsakyti</button></span>
+                    @endguest
                 </div>
             </form>
+
             </div>
 
 
