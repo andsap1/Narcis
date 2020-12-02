@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
 Route::get('/{category}', 'ShopController@getCategory');
-
+Route::get('/{color}', 'ShopController@getColor');
 
 Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');

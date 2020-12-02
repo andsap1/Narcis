@@ -11,6 +11,7 @@ use App\Models\Nuotrauka;
 use App\Models\Preke;
 
 use App\Models\PrekeKrepselis;
+use App\Models\Spalva;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +25,9 @@ class ShopController extends Controller
     public function index(){
            $items = Preke::paginate(10);
            $categories=Kategorija::all();
+        $colors=Spalva::all();
 
-        return view('shop', compact('items','categories'));
+        return view('shop', compact('items','categories','colors'));
         }
 
     public function openItem($id){
@@ -50,7 +52,6 @@ class ShopController extends Controller
             $items = Preke::where('fk_Kategorijaid', '=', $category)->get();
             $prekiusk = Preke::where('fk_Kategorijaid', '=', $category)->get();
             $cate=Kategorija::where('id_Kategorija','=',$category)->first();
-
             $photo=Nuotrauka::all();
 
         } else {
@@ -58,10 +59,28 @@ class ShopController extends Controller
             $prekiusk = $items;
             $cate='null';
         }
-
         $categories = Kategorija::all();
+        $colors=Spalva::all();
 
-        return view('shop', compact( 'categories','items','cate','photo'));
+        return view('shop', compact( 'categories','items','cate','photo','colors'));
+    }
+    public function getColor($color)
+    {
+        if ($color) {
+            $items = Preke::where('fk_Kategorijaid', '=', $color)->get();
+            $prekiusk = Preke::where('fk_Kategorijaid', '=', $color)->get();
+            $cate=Kategorija::where('id_Kategorija','=',$color)->first();
+            $photo=Nuotrauka::all();
+
+        } else {
+            $items = Preke::all();
+            $prekiusk = $items;
+            $cate='null';
+        }
+        $categories = Kategorija::all();
+        $colors=Spalva::all();
+
+        return view('shop', compact( 'categories','items','cate','photo','colors'));
     }
 
     public function signout(){

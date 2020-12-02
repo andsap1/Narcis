@@ -75,13 +75,16 @@
         <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">
         <h5 class="list-group-item">Kategorijos</h5>
         @foreach($categories as $category)
-            <a href="{{ action('ShopController@getCategory', $category->id_Kategorija)}}" class="list-group-item">{{ $category->pavadinimas }}</a>
-
+            <a href="{{ action('ShopController@getCategory', $category->id_Kategorija)}}"
+               class="list-group-item">{{ $category->pavadinimas }}</a>
     @endforeach
         <h5 class="list-group-item">Spalvos</h5>
+        @foreach($colors as $color)
+        <a href="{{ action('ShopController@getColor', $color->id_Spalva)}}"
+           class="list-group-item">{{ $color->pavadinimas }}</a>
+        @endforeach
     @endsection
         @section('sort')
-
             <select name="amount" style="float: right;" id="">
                 <option value="10">10</option>
                 <option value="25">25</option>

@@ -8,7 +8,7 @@
                     <div class="card-header" id="antraste">Redaguoti prekę</div>
 
                     <div class="card-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('confirmEditedProduct', $selectedProduct->id_Preke) }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/confirmEditedProduct', $selectedProduct->id_Preke) }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Pavadinimas</label>

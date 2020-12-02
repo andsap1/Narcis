@@ -9,6 +9,7 @@ use App\Models\Kategorija;
 use App\Models\Nuotrauka;
 use App\Models\Preke;
 use App\Models\PrekeKrepselis;
+use App\Models\Spalva;
 use App\Models\User;
 use App\Models\Uzsakymas;
 use Carbon\Carbon;
@@ -38,9 +39,9 @@ class AdminController extends Controller
     {
         $items = Preke::all();
         $categories = Kategorija::all();
-        $colors=
+        $colors=Spalva::all();
 
-        return view('product', compact('items', 'categories'));
+        return view('product', compact('items', 'categories','colors'));
     }
     public function categories()
     {
@@ -140,7 +141,8 @@ class AdminController extends Controller
             ->first();
 
         $allCat = Kategorija::all();
-        return view('productedit', compact('selectedProduct', 'allCat'));
+        $colors=Spalva::all();
+        return view('productedit', compact('selectedProduct', 'allCat','colors'));
     }
 
     public function deleteProduct($id)

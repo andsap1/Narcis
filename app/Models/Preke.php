@@ -11,5 +11,5 @@ class Preke extends Model
     protected $primaryKey= 'id_Preke';
     public $timestamps = false;
 
-    protected $fillable = ['pavadinimas','aprasymas','kaina','ikelimo_data','fk_Ivertinimas','spalva','fk_Kategorijaid'];
+    protected $fillable = ['pavadinimas','aprasymas','kaina','ikelimo_data','fk_Ivertinimas','fk_Spalva','fk_Kategorijaid'];
 }
