@@ -4,6 +4,7 @@
     <list default="true" id="619088c9-1272-49fb-92fe-0d231e797d86" name="Default Changelist" comment="aa">
       <change beforePath="$PROJECT_DIR$/.idea/Narcis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Narcis.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
@@ -15,6 +16,9 @@
       <change beforePath="$PROJECT_DIR$/resources/views/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reviews.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users.blade.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/resources/views/login1.blade.php" beforeDir="false" />
+>>>>>>> 8ee5b8ea31236ee4c3e6d7dfec926b469d2e36f7
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,8 +206,12 @@
       <workItem from="1606467259598" duration="860000" />
       <workItem from="1606574895918" duration="3367000" />
       <workItem from="1606765891937" duration="4792000" />
+<<<<<<< HEAD
       <workItem from="1606837993355" duration="16134000" />
       <workItem from="1606934089039" duration="12126000" />
+=======
+      <workItem from="1606837993355" duration="19701000" />
+>>>>>>> 8ee5b8ea31236ee4c3e6d7dfec926b469d2e36f7
     </task>
     <servers />
   </component>
