@@ -40,7 +40,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
-               <img class="card-img-top" src="images/rose.jpeg" alt="">
+               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">
                 {{--                        <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                 <div class="card-body">
                     <h4 class="card-title">
@@ -85,6 +85,7 @@
         @endforeach
     @endsection
         @section('sort')
+
             <select name="amount" style="float: right;" id="">
                 <option value="10">10</option>
                 <option value="25">25</option>

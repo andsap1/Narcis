@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 /*
@@ -19,8 +20,8 @@ Route::get('/', function () {
 
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
-Route::get('/{category}', 'ShopController@getCategory');
-Route::get('/{color}', 'ShopController@getColor');
+Route::get('/shop/{category}', 'ShopController@getCategory');
+Route::get('/shop/{color}', 'ShopController@getColor');
 
 Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');
