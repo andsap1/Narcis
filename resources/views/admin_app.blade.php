@@ -73,18 +73,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Atsiliepimai
+                        <a class="nav-link" href="{{route('adminRoutes.reviews')}}">Atsiliepimai
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="#">Gauti prenšimai
+                            <a class="nav-link" href="#">Gauti prenešimai
                                 <span class="sr-only">(current)</span>
                             </a>
                      </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{Route('adminRoutes.admin_logout')}}">Atsijungti</a>
+                            <a class="nav-link" style="color: whitesmoke" href="{{Route('adminRoutes.admin_logout')}}">Atsijungti</a>
                         </li>
                     @endauth
 {{--                        <li class="nav-item">--}}

@@ -54,7 +54,18 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Spalva</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="spalva" value="{{ $selectedProduct->spalva }}">
+                                <select class="form-control" name="fk_Spalva">
+                                    @foreach($colors as $cl)
+                                        @if($selectedProduct->fk_Spalva === $cl->id_Spalva)
+                                            <option value="{{$selectedProduct->fk_Spalva}}">{{$cl->pavadinimas}}</option>
+                                        @endif
+                                    @endforeach
+                                    @foreach($colors as $cl)
+                                        @if($selectedProduct->fk_Spalva != $cl->id_Spalva)
+                                            <option value="{{$cl->id_Spalva}}">{{$cl->pavadinimas}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 

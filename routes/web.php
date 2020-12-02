@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
+Route::get('/{category}', 'ShopController@getCategory');
+
 
 Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');
@@ -43,6 +45,7 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin/products', 'AdminController@products')->name('products');
     Route::post('/admin/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
     Route::get('/admin/manageProduct', 'AdminController@addProduct')->name('addProduct');
+    Route::get('/admin/manageProduct/{id}', 'AdminController@deleteProduct')->name('deleteProduct');
     Route::get('/admin/productedit/{id}','AdminController@editProduct')->name('productedit');
     Route::post('/admin/confirmEditedProduct/{id}', 'AdminController@confirmEditedProduct')->name('confirmEditedProduct');
 
@@ -55,10 +58,17 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin/users', 'AdminController@users')->name('users');
 
     Route::get('/admin/orders', 'AdminController@orders')->name('orders');
-//    Route::get('/admin/manageOrder/{id}', 'AdminController@deleteOrders')->name('deleteOrder');
+    Route::get('/admin/manageOrder/{id}', 'AdminController@deleteOrders')->name('deleteOrder');
 //    Route::post('/admin/manageOrder', 'AdminController@insertOrders')->name('manageOrders');
     Route::get('/admin/orderedit/{id}','AdminController@editOrders')->name('orderedit');
     Route::post('confirmEditedOrder/{id}', 'AdminController@confirmEditedOrders')->name('confirmEditedOrders');
+
+    Route::get('/admin/reviews', 'AdminController@reviews')->name('reviews');
+//    Route::post('/admin/manageReview', 'AdminController@insertReview')->name('manageReview');
+//    Route::get('/admin/manageReview', 'AdminController@addReview')->name('addReview');
+    Route::get('/admin/reviewedit/{id}','AdminController@editReview')->name('reviewedit');
+    Route::post('/admin/confirmEditedReview/{id}', 'AdminController@confirmEditedReview')->name('confirmEditedReview');
+    Route::get('/admin/reviews/{id}', 'AdminController@deleteReview')->name('deleteReview');
 });
 
 

@@ -32,8 +32,10 @@
 {{--</div>--}}
 
 <div class="row">
-
-
+{{--    <h1 id="antraste">{{$cate->pavadinimas}}</h1>--}}
+    @if(count($items) === 0)
+        <p>Šiai kategorijai priklausančių prekių nėra.</p>
+    @else
     @foreach($items as $item)
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
@@ -54,9 +56,10 @@
             </div>
         </div>
     @endforeach
+    @endif
 
 <div align="center">
-        {{$items->links("pagination::bootstrap-4") }}
+{{--        {{$items->links("pagination::bootstrap-4") }}--}}
 </div>
 </div>
 </div>
@@ -72,7 +75,7 @@
         <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">
         <h5 class="list-group-item">Kategorijos</h5>
         @foreach($categories as $category)
-            <a href="#" class="list-group-item">{{ $category->pavadinimas }}</a>
+            <a href="{{ action('ShopController@getCategory', $category->id_Kategorija)}}" class="list-group-item">{{ $category->pavadinimas }}</a>
 
     @endforeach
         <h5 class="list-group-item">Spalvos</h5>

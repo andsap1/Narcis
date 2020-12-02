@@ -44,12 +44,30 @@ class ShopController extends Controller
 
     }
 
+    public function getCategory($category)
+    {
+        if ($category) {
+            $items = Preke::where('fk_Kategorijaid', '=', $category)->get();
+            $prekiusk = Preke::where('fk_Kategorijaid', '=', $category)->get();
+            $cate=Kategorija::where('id_Kategorija','=',$category)->first();
+
+            $photo=Nuotrauka::all();
+
+        } else {
+            $items = Preke::all();
+            $prekiusk = $items;
+            $cate='null';
+        }
+
+        $categories = Kategorija::all();
+
+        return view('shop', compact( 'categories','items','cate','photo'));
+    }
+
     public function signout(){
         Auth::logout();
         return Redirect::to('/')->with('success', 'Jūs atsijungėte.');
     }
-
-
 
 
     //ADD ITEM TO THE CART
