@@ -22,21 +22,16 @@
                         @endif
 
                     @endforeach
-{{--               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">--}}
-
-                {{--                        <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
+{{--                                   <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                 <div class="card-body">
                     <h4 class="card-title">
                         <a href="{{ action('ShopController@openItem', $item->id_Preke)}}">{{$item->pavadinimas}}</a>
                     </h4>
                     <h5>{{$item->kaina}} Eur</h5>
                     <p class="card-text">{{$item->aprasymas}}</p>
-                    <p class="card-text">{{$item->fk_Spalva}}</p>
+{{--                    <p class="card-text">{{$item->fk_Spalva}}</p>--}}
                 </div>
                 </a>
-                {{--                        <div class="card-footer">--}}
-                {{--                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>--}}
-                {{--                        </div>--}}
             </div>
         </div>
     @endforeach
