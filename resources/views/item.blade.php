@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-sm">
                     <h3 class="card-title">{{$item->pavadinimas}}</h3>
-                    <img src="{{asset('images/rose.jpeg')}}" alt="" width="355" height="275">
+                    <img src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}" width="355" height="275">
+{{--                    <div ><img class="img-responsive" src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>--}}
+
                     <div class="row">
                         <div class="col-sm">
                             <div class="img-thumbnail">
@@ -61,8 +63,12 @@
                     </form>
                 </div>
             </div>
-            <div class="row justify-content-center pt-5">
-                <div class="border-dark border justify-content-center flex-row d-flex">
+            <br>
+            <br>
+
+            <h5 align="center">Įvertinkite prekę</h5>
+            <div class="row justify-content-center pt-5" style="padding-top: 10px!important;">
+                <div class="justify-content-center flex-row d-flex">
                     <div class="column" align="center">
                         <img src="{{asset('images/banana.png')}}" alt="Snow" width="75" height="75">
                         <div align="center">0</div>

@@ -40,7 +40,18 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
-               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">
+
+                    @foreach($photo as $ph)
+                        @if ($item->id_Preke == $ph->fk_Prekeid_Preke)
+                            <img class="card-img-top" src="{{ asset('/images') . '/' . $ph->pavadinimas}}" alt="">
+{{--                            <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
+                            @break
+                            {{--                        @else {{'no photo'}} @break;--}}
+                        @endif
+
+                    @endforeach
+{{--               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">--}}
+
                 {{--                        <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                 <div class="card-body">
                     <h4 class="card-title">
@@ -72,13 +83,14 @@
     <div class="list-group">
 
         <!-- Search form -->
-        <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">
-        <h5 class="list-group-item">Kategorijos</h5>
+{{--        <input class="form-control" style=" height: 50px" type="text" placeholder="Prekės paieška" aria-label="Search">--}}
+        <h5 class="list-group-item" style="margin-bottom: 0px;" >Kategorijos</h5>
         @foreach($categories as $category)
             <a href="{{ action('ShopController@getCategory', $category->id_Kategorija)}}"
                class="list-group-item">{{ $category->pavadinimas }}</a>
     @endforeach
-        <h5 class="list-group-item">Spalvos</h5>
+        <br>
+        <h5 class="list-group-item" style="margin-bottom: 0px;">Spalvos</h5>
         @foreach($colors as $color)
         <a href="{{ action('ShopController@getColor', $color->id_Spalva)}}"
            class="list-group-item">{{ $color->pavadinimas }}</a>

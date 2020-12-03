@@ -23,11 +23,12 @@ class ShopController extends Controller
 {
 
     public function index(){
-           $items = Preke::paginate(10);
+           $items = Preke::paginate(30);
            $categories=Kategorija::all();
         $colors=Spalva::all();
+        $photo=Nuotrauka::all();
 
-        return view('shop', compact('items','categories','colors'));
+        return view('shop', compact('items','categories','colors','photo'));
         }
 
     public function openItem($id){
