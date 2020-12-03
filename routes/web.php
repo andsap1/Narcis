@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/', 'ShopController@index');
 Route::get('/item/{id}', 'ShopController@openItem');
 Route::get('/shop/{category}', 'ShopController@getCategory');
-Route::get('/shop/{color}', 'ShopController@getColor');
+Route::get('/shops/{color}', 'ShopController@getColor');
 
 Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');

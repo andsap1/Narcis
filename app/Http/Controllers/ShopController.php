@@ -9,7 +9,7 @@ use App\Models\Atsiliepimas;
 use App\Models\Kategorija;
 use App\Models\Nuotrauka;
 use App\Models\Preke;
-
+use Illuminate\Database\Eloquent\Model;
 use App\Models\PrekeKrepselis;
 use App\Models\Spalva;
 use Illuminate\Http\Request;
@@ -40,7 +40,6 @@ class ShopController extends Controller
 
         $items = $request->items ?? 10;      // get the pagination number or a default
 
-//        $club = Preke::findOrFail(session('club'));
 
         $members = Preke::paginate($items);
 
@@ -63,41 +62,48 @@ class ShopController extends Controller
 
     }
 
-    public function getCategory($category)
+    public function getCategory($category,Request $request)
     {
+        $items = $request->items ?? 10;
         if ($category) {
-            $items = Preke::where('fk_Kategorijaid', '=', $category)->get();
+            $members = Preke::where('fk_Kategorijaid', '=', $category)->paginate($items);
             $prekiusk = Preke::where('fk_Kategorijaid', '=', $category)->get();
             $cate=Kategorija::where('id_Kategorija','=',$category)->first();
             $photo=Nuotrauka::all();
 
         } else {
-            $items = Preke::all();
-            $prekiusk = $items;
+            $members = Preke::paginate($items);
+//            $members = Preke::all();
+            $prekiusk = $members;
             $cate='null';
         }
         $categories = Kategorija::all();
         $colors=Spalva::all();
 
-        return view('shop', compact( 'categories','items','cate','photo','colors'));
+        return view('shop', compact( 'categories','members','cate','photo','colors','items'));
     }
-    public function getColor($color)
+
+
+    public function getColor($color, Request $request)
     {
+        $items = $request->items ?? 10;
         if ($color) {
-            $items = Preke::where('fk_Kategorijaid', '=', $color)->get();
-            $prekiusk = Preke::where('fk_Kategorijaid', '=', $color)->get();
-            $cate=Kategorija::where('id_Kategorija','=',$color)->first();
+            $members = Preke::where('fk_Spalva', '=', $color)->paginate($items);
+            $prekiusk = Preke::where('fk_Spalva', '=', $color)->get();
+//            $cate=Kategorija::where('id_Kategorija','=',$color)->first();
             $photo=Nuotrauka::all();
 
         } else {
-            $items = Preke::all();
-            $prekiusk = $items;
-            $cate='null';
+            $members = Preke::paginate($items);
+//            $members = Preke::all();
+            $prekiusk = $members;
+
         }
+        $cate='null';
         $categories = Kategorija::all();
         $colors=Spalva::all();
 
-        return view('shop', compact( 'categories','items','cate','photo','colors'));
+        return view('shop', compact( 'categories','members','cate','photo','colors','items'));
     }
 
     public function signout(){
