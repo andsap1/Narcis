@@ -10,12 +10,12 @@
     @else
     @foreach($members as $item)
           <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
+            <div class="card h-100" >
                 <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
 
                     @foreach($photo as $ph)
                         @if ($item->id_Preke == $ph->fk_Prekeid_Preke)
-                            <img class="card-img-top" src="{{ asset('/images') . '/' . $ph->pavadinimas}}" alt="">
+                            <img class="card-img-top shop" src="{{ asset('/images') . '/' . $ph->pavadinimas}}" >
 {{--                            <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                             @break
                             {{--                        @else {{'no photo'}} @break;--}}

@@ -117,3 +117,13 @@ hr{
     text-align: center;
     color: black;
 }
+
+.shop {
+    max-height: 220px;
+    width: auto;
+}
+
+.item {
+    max-height: 300px;
+    width: auto;
+}
