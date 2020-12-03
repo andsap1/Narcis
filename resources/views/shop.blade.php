@@ -33,10 +33,10 @@
 
 <div class="row">
 {{--    <h1 id="antraste">{{$cate->pavadinimas}}</h1>--}}
-    @if(count($items) === 0)
+    @if(count($members) === 0)
         <p>Šiai kategorijai priklausančių prekių nėra.</p>
     @else
-    @foreach($items as $item)
+    @foreach($members as $item)
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100" >
                 <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
@@ -98,15 +98,25 @@
     @endsection
         @section('sort')
 
-            <select name="amount" style="float: right;" id="">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-            </select>
+{{--            <select name="amount" style="float: right;" id="">--}}
+{{--                <option value="10">10</option>--}}
+{{--                <option value="25">25</option>--}}
+{{--                <option value="50">50</option>--}}
+{{--            </select>--}}
 
-            <h5 class="lg-4" align="right"  >Prekių skaičius puslapyje  &nbsp; </h5>
+{{--            <h5 class="lg-4" align="right"  >Prekių skaičius puslapyje  &nbsp; </h5>--}}
 
+             <form style="margin-bottom: .9rem" >
+                  <select id="pagination" >
+                             <option value="10" @if($items == 10) selected @endif >10</option>
+                             <option value="25" @if($items == 25) selected @endif >25</option>
+                             <option value="50" @if($items == 50) selected @endif >50</option>
+                        </select> </form>
 
+             <script>
+                     document.getElementById('pagination').onchange = function() {
+                         window.location = "{!! $members->url(1) !!}&items=" + this.value;
+                     };  </script>
 
 
     @endsection

@@ -22,14 +22,30 @@ use Illuminate\Support\Facades\Validator;
 class ShopController extends Controller
 {
 
-    public function index(){
-           $items = Preke::paginate(30);
-           $categories=Kategorija::all();
+//    public function index(){
+//           $items = Preke::paginate(30);
+//           $categories=Kategorija::all();
+//        $colors=Spalva::all();
+//        $photo=Nuotrauka::all();
+//
+//
+//
+//        return view('shop', compact('items','categories','colors','photo'));
+//        }
+    public function index(Request $request){
+//        $items = Preke::paginate(30);
+        $categories=Kategorija::all();
         $colors=Spalva::all();
         $photo=Nuotrauka::all();
 
-        return view('shop', compact('items','categories','colors','photo'));
-        }
+        $items = $request->items ?? 10;      // get the pagination number or a default
+
+//        $club = Preke::findOrFail(session('club'));
+
+        $members = Preke::paginate($items);
+
+        return view('shop', compact('members','categories','colors','photo','items'));
+    }
 
     public function openItem($id){
         $item = Preke::where('id_Preke', '=', $id)->first();
