@@ -106,7 +106,7 @@
 
 {{--            <h5 class="lg-4" align="right"  >Prekių skaičius puslapyje  &nbsp; </h5>--}}
 
-             <form>
+             <form style="margin-bottom: .9rem" >
                   <select id="pagination" >
                              <option value="10" @if($items == 10) selected @endif >10</option>
                              <option value="25" @if($items == 25) selected @endif >25</option>

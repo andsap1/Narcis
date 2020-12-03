@@ -129,6 +129,7 @@
 
 <div class="col-lg-9">
 @yield('sort')
+
 @yield('content')
 
 
