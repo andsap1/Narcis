@@ -65,8 +65,12 @@
                     </form>
                 </div>
             </div>
-            <div class="row justify-content-center pt-5">
-                <div class="border-dark border justify-content-center flex-row d-flex">
+            <br>
+            <br>
+
+            <h5 align="center">Įvertinkite prekę</h5>
+            <div class="row justify-content-center pt-5" style="padding-top: 10px!important;">
+                <div class="justify-content-center flex-row d-flex">
                     <div class="column" align="center">
                         <img src="{{asset('images/banana.png')}}" alt="Snow" width="75" height="75">
                         <div align="center">0</div>

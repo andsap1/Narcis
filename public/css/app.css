@@ -17,6 +17,9 @@ body {
 a {
     color: #F05D5E;
 }
+hr{
+    margin-top: 5px;
+}
 
 #footer {
     position:fixed;
