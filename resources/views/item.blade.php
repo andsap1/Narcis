@@ -41,20 +41,18 @@
                             <span>Kiekis:</span>
                             <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1"
                                    style="width: 50px;margin: 0 10px">
-
                             @guest
                                 <span id="cart-button"><button type="button" disabled class="btn btn-dark"
                                                                style="float: right;">Užsakyti *
                             </button>
-                            <br>
-                            <br>
-                            <p style="float: right">*Pirkti galima tik prisijungus</p></span>
+                            </span>
                             @else
                                 <span id="cart-button"><button type="submit" class="btn btn-dark" style="float: right;">Užsakyti</button></span>
                             @endguest
-
-
                         </div>
+                        @guest
+                            <p style="float: right">*Pirkti galima tik prisijungus</p>
+                        @endguest
                         <br>
                         <select name="preke" style="visibility: hidden">
                             <option value="{{$item->id_Preke}}">
