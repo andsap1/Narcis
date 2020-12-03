@@ -40,7 +40,18 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
                 <a href="{{ action('ShopController@openItem', $item->id_Preke)}}" >
-               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">
+
+                    @foreach($photo as $ph)
+                        @if ($item->id_Preke == $ph->fk_Prekeid_Preke)
+                            <img class="card-img-top" src="{{ asset('/images') . '/' . $ph->pavadinimas}}" alt="">
+{{--                            <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
+                            @break
+                            {{--                        @else {{'no photo'}} @break;--}}
+                        @endif
+
+                    @endforeach
+{{--               <img class="card-img-top" src="{{asset('images/rose.jpeg')}}" alt="">--}}
+
                 {{--                        <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
                 <div class="card-body">
                     <h4 class="card-title">

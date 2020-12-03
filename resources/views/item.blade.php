@@ -6,7 +6,9 @@
             <div class="row">
                 <div class="col-sm">
                     <h3 class="card-title">{{$item->pavadinimas}}</h3>
-                    <img src="{{asset('images/rose.jpeg')}}" alt="" width="355" height="275">
+                    <img src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}" width="355" height="275">
+{{--                    <div ><img class="img-responsive" src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>--}}
+
                     <div class="row">
                         <div class="col-sm">
                             <div class="img-thumbnail">
