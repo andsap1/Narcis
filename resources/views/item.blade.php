@@ -12,22 +12,22 @@
                     <div class="row">
                         <div class="col-sm">
                             <div class="img-thumbnail">
-                                <img class="img-preview" src="{{asset('images/rose.jpeg')}}" alt="">
+                                <img class="img-preview img-responsive" id="zoom" src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}">
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="img-thumbnail">
-                                <img class="img-preview" src="{{asset('images/rose.jpeg')}}" alt="">
+                                <img class="img-preview img-responsive" id="zoom" src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}">
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="img-thumbnail">
-                                <img class="img-preview" src="{{asset('images/rose.jpeg')}}" alt="">
+                                <img class="img-preview img-responsive" id="zoom" src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}">
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="img-thumbnail">
-                                <img class="img-preview" src="{{asset('images/rose.jpeg')}}" alt="">
+                                <img class="img-preview img-responsive" id="zoom" src="../images/{{$mainphoto->pavadinimas}}" alt="paveiksliukas {{$mainphoto->pavadinimas}}">
                             </div>
                         </div>
                     </div>
