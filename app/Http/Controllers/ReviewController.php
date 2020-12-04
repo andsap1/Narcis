@@ -31,7 +31,7 @@ class ReviewController extends Controller
         $atsiliepimai -> fk_naudotojasid_Naudotojas = $user->id;
 
         $atsiliepimai->save();
-        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas!');
+        return Redirect::to('/atsiliepimai')->with('success', 'Atsiliepimas pridėtas! Laukiama patvirtinimo');
     }
 
     public function editReview($id){
