@@ -80,11 +80,11 @@
             <input style="text-align: center;" type="text" class="card-number" placeholder="xxxx-xxxx-xxxx-xxxx">
 
                     <h5 align="">Vardas </h5>
-                    <input align="center" type="text" class="card-number" placeholder="" >
+                    <input style="text-align: center;" align="center" type="text" class="card-number" placeholder="" >
                     <h5>Galiojimo data (mėnuo/metai)</h5>
-                    <input type="text" class="month" placeholder="mm/yy">
+                    <input style="text-align: center;" type="text" class="month" value="/">
                     <h5>CVV2/CVC2*</h5>
-                    <input type="text" class="month" placeholder="xxx">
+                    <input style="text-align: center;" type="text" class="month" placeholder="***">
 
            <div>
 
