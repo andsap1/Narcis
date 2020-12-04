@@ -88,7 +88,8 @@
 
            <div>
 
-            <button class="btn btn-dark mt-2">Mokėti</button>
+
+               <a href="{{ action('CartController@completed')}}" class="btn btn-dark">Mokėti</a>
            </div>
             </div>
         </div>

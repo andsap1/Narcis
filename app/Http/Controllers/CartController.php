@@ -57,6 +57,11 @@ class CartController extends Controller
 
 
     }
+
+    public function completed(){
+
+        return view('completed');
+    }
 //    public function updatePreke($id, Request $request){
 //        $kr=session('krepselis');
 //        $preke= PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->first();

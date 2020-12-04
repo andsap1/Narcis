@@ -34,6 +34,7 @@ Route::post('/atsiliepimai/redaguotii/{id}', 'ReviewController@editedReview');
 Route::post('/item/insert', 'ShopController@insertPrekeKrepselis')->name('insertItem');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/order', 'CartController@order');
+Route::get('/order/completed', 'CartController@completed');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/signout', 'ShopController@signout');
