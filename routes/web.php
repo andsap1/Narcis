@@ -23,6 +23,8 @@ Route::get('/item/{id}', 'ShopController@openItem');
 Route::get('/shop/{category}', 'ShopController@getCategory');
 Route::get('/shops/{color}', 'ShopController@getColor');
 
+Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
+
 Route::get('/atsiliepimai','ReviewController@reviews');
 Route::get('/atsiliepimai/naujas', 'ReviewController@newReview');
 Route::post('atsiliepimai/naujas/','ReviewController@addReview');

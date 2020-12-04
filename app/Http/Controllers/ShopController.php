@@ -164,7 +164,7 @@ class ShopController extends Controller
             }
             session(['kiekis'=>$kiekelis]);
 
-            return Redirect::back()->with('success', 'Item(s) added to cart');
+            return Redirect::back()->with('success', 'Prekė pridėta į krepšelį');
         }
 
 
@@ -194,7 +194,7 @@ class ShopController extends Controller
             }
             session(['kiekis'=>$kiekelis]);
 
-            return Redirect::back()->with('success', 'Item(s) added to cart');
+            return Redirect::back()->with('success', 'Prekė pridėta į krepšelį');
         }
     }
 

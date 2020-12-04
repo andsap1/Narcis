@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategorija;
+use App\Models\Krepselis;
+use App\Models\Preke;
+use App\Models\PrekeKrepselis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -100,42 +103,42 @@ class CartController extends Controller
 //
 //    }
 //
-//    public function deletePreke($id)
-//    {
-//        $kr=session('krepselis');
-//        if( PrekeKrepselis::where('fk_krepselis','=',$kr)->count()>1)
-//        {
-//            PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->delete();
-//
-//            //update krepselio suma
-//            $naujakaina=0;
-//            $visoskp=PrekeKrepselis::where('fk_krepselis','=',$kr)->get();
-//            foreach ($visoskp as $vp){
-//                $preke=Preke::where('id_preke',$vp->fk_preke)->first();
-//                $naujakaina=$naujakaina+($preke->kaina*$vp->kiekis);
-//            }
-//            Krepselis::where('id_krepselis', $kr)->update(
-//                [
-//                    'kaina' => $naujakaina,
-//                ]);
-//            return Redirect::back()->with('success', 'Item deleted');
-//        }
-//
-//        else{
-//            PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->delete();
-//            $visosp=PrekeKrepselis::where('fk_krepselis','=',$kr)->get();
-//            Krepselis::where('id_krepselis','=',$kr)->delete();
-//
-//            $kiekelis=0;
-//            foreach ($visosp as $kk){
-//                $kiekelis=$kiekelis+$kk->kiekis;
-//            }
-//            session(['kiekis'=>$kiekelis]);
-//            session()->forget('krepselis');
-//
-//            return Redirect::to('shop1')->with('success', 'Item deleted');
-//        }
+    public function deletePreke($id)
+    {
+        $kr=session('krepselis');
+        if( PrekeKrepselis::where('fk_Krepselis','=',$kr)->count()>1)
+        {
+            PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->delete();
 
-//    }
+            //update krepselio suma
+            $naujakaina=0;
+            $visoskp=PrekeKrepselis::where('fk_Krepselis','=',$kr)->get();
+            foreach ($visoskp as $vp){
+                $preke=Preke::where('id_Preke',$vp->fk_Preke)->first();
+                $naujakaina=$naujakaina+($preke->kaina*$vp->kiekis);
+            }
+            Krepselis::where('id_Krepselis', $kr)->update(
+                [
+                    'suma' => $naujakaina,
+                ]);
+            return Redirect::back()->with('success', 'Pašalinta');
+        }
+
+        else{
+            PrekeKrepselis::where('id_Preke_Krepselis','=',$id)->delete();
+            $visosp=PrekeKrepselis::where('fk_Krepselis','=',$kr)->get();
+            Krepselis::where('id_Krepselis','=',$kr)->delete();
+
+            $kiekelis=0;
+            foreach ($visosp as $kk){
+                $kiekelis=$kiekelis+$kk->kiekis;
+            }
+            session(['kiekis'=>$kiekelis]);
+            session()->forget('krepselis');
+
+            return Redirect::to('/')->with('success', 'Pašalinta');
+        }
+
+    }
 
 }
