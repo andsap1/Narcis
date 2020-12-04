@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 class ReviewController extends Controller
 {
     public function reviews(){
-        $items = Atsiliepimas::all();
+        $zero=0;
+        $items = Atsiliepimas::where('naudotojo_nuotraukos_pavadinimas','!=',$zero)->get();
+
 
 
 
