@@ -21,6 +21,18 @@ hr{
     margin-top: 5px;
 }
 
+#zoom {
+
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+#zoom:hover{
+    transform: scale(2.5);
+    position: relative;
+    z-index: 1;
+}
+
 #footer {
     position:fixed;
     left:0px;
