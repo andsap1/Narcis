@@ -70,24 +70,136 @@
             <div class="row justify-content-center pt-5" style="padding-top: 10px!important;">
                 <div class="justify-content-center flex-row d-flex">
                     <div class="column" align="center">
-                        <img src="{{asset('images/banana.png')}}" alt="Snow" width="75" height="75">
-                        <div align="center">0</div>
+                        <div id="poke"><input type="image" src="{{asset('images/banana.png')}}" width="75" height="75" /></div>
+                        <div id="counter">7</div>
+
+
+                        <script type='text/javascript'>
+                            var poke = document.getElementById('poke');
+                            var cmp = document.getElementById('counter');
+                            poke.addEventListener('click', myfonction)
+                            poke.addEventListener('dblclick',myfonction1)
+
+                            //===========================================================
+                            function myfonction() {
+
+                                cmp.innerHTML = 8;
+
+                            }
+
+                            function myfonction1() {
+
+                                cmp.innerHTML = 7;
+
+
+                            }
+                        </script>
+
                     </div>
                     <div class="column">
-                        <img src="{{asset('images/alien.png')}}" alt="Forest" width="75" height="75">
-                        <div align="center">0</div>
+                        <div id="poke1"><input type="image" src="{{asset('images/alien.png')}}" width="75" height="75" /></div>
+                        <div id="counter1" align="center">15</div>
+
+
+                        <script type='text/javascript'>
+                            var poke1 = document.getElementById('poke1');
+                            var cmp1 = document.getElementById('counter1');
+                            poke1.addEventListener('click', myfonction2)
+                            poke1.addEventListener('dblclick',myfonction3)
+
+                            //===========================================================
+                            function myfonction2() {
+
+                                cmp1.innerHTML = 16;
+
+                            }
+
+                            function myfonction3() {
+
+                                cmp1.innerHTML = 15;
+
+
+                            }
+                        </script>
                     </div>
                     <div class="column">
-                        <img src="{{asset('images/red-heart.png')}}" alt="Forest" width="75" height="75">
-                        <div align="center">0</div>
+                        <div id="poke2"><input type="image" src="{{asset('images/red-heart.png')}}" width="75" height="75" /></div>
+                        <div id="counter2" align="center">30</div>
+
+
+                        <script type='text/javascript'>
+                            var poke2 = document.getElementById('poke2');
+                            var cmp2 = document.getElementById('counter2');
+                            poke2.addEventListener('click', myfonction2)
+                            poke2.addEventListener('dblclick',myfonction3)
+
+                            //===========================================================
+                            function myfonction2() {
+
+                                cmp2.innerHTML = 31;
+
+                            }
+
+                            function myfonction3() {
+
+                                cmp2.innerHTML = 30;
+
+
+                            }
+                        </script>
                     </div>
                     <div class="column">
-                        <img src="{{asset('images/thumbs-up.png')}}" alt="Forest" width="75" height="75">
-                        <div align="center">0</div>
+                        <div id="poke3"><input type="image" src="{{asset('images/thumbs-up.png')}}" width="75" height="75" /></div>
+                        <div id="counter3" align="center">2</div>
+
+
+                        <script type='text/javascript'>
+                            var poke3 = document.getElementById('poke3');
+                            var cmp3 = document.getElementById('counter3');
+                            poke3.addEventListener('click', myfonction2)
+                            poke3.addEventListener('dblclick',myfonction3)
+
+                            //===========================================================
+                            function myfonction2() {
+
+                                cmp3.innerHTML = 3;
+
+                            }
+
+                            function myfonction3() {
+
+                                cmp3.innerHTML = 2;
+
+
+                            }
+                        </script>
                     </div>
                     <div class="column">
-                        <img src="{{asset('images/tree.png')}}" alt="Forest" width="75" height="75">
-                        <div align="center">0</div>
+                        <div id="poke4"><input type="image" src="{{asset('images/tree.png')}}" width="75" height="75" /></div>
+                        <div id="counter4" align="center">17</div>
+
+
+                        <script type='text/javascript'>
+                            var poke4 = document.getElementById('poke4');
+                            var cmp4 = document.getElementById('counter4');
+                            poke4.addEventListener('click', myfonction2)
+                            poke4.addEventListener('dblclick',myfonction3)
+
+                            //===========================================================
+                            function myfonction2() {
+
+                                cmp4.innerHTML = 18;
+
+                            }
+
+                            function myfonction3() {
+
+                                cmp4.innerHTML = 17;
+
+
+                            }
+                        </script>
+
                     </div>
                 </div>
             </div>
