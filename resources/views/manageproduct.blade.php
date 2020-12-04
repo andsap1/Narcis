@@ -42,7 +42,13 @@
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Spalva</label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="spalva" value="{{ old('spalva') }}">
+{{--                                    <input type="text" class="form-control" name="spalva" value="{{ old('spalva') }}">--}}
+                                    <select class="form-control" name="fk_Spalva" >
+                                        <option value="{{ old('fk_Spalva') }}"></option>
+                                        @foreach($all as $c)
+                                            <option value="{{$c->id_Spalva}}">{{$c->pavadinimas}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 {{--                            <div class="form-group row">--}}

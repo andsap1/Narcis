@@ -52,7 +52,8 @@ class AdminController extends Controller
     public function addProduct()
     {
         $allCat = Kategorija::all();
-        return view('manageProduct', compact('allCat'));
+        $all=Spalva::all();
+        return view('manageProduct', compact('allCat', 'all'));
     }
 
     public function insertProduct(Request $request)
@@ -62,14 +63,14 @@ class AdminController extends Controller
                 'fk_Kategorijaid' => $request->input('fk_Kategorijaid'),
                 'aprasymas' => $request->input('aprasymas'),
                 'kaina' => $request->input('kaina'),
-                'spalva' => $request->input('spalva'),
+                'fk_Spalva' => $request->input('fk_Spalva'),
             ],
             [
                 'pavadinimas' => 'required|min:1|max:30',
                 'fk_Kategorijaid' => 'required',
                 'aprasymas' => 'required|min:3',
                 'kaina' => 'required',
-                'spalva' => 'required'
+                'fk_Spalva' => 'required'
             ]
         );
 
@@ -82,7 +83,7 @@ class AdminController extends Controller
             $allPro->fk_Kategorijaid = $request->input('fk_Kategorijaid');
             $allPro->aprasymas = $request->input('aprasymas');
             $allPro->kaina = $request->input('kaina');
-            $allPro->spalva = $request->input('spalva');
+            $allPro->fk_Spalva = $request->input('fk_Spalva');
             $allPro->ikelimo_data = Carbon::now();
 
             $allPro->save();
